@@ -56,7 +56,7 @@
 
 // CONFIG2
 #pragma config WRT = OFF    // Flash Memory Self-Write Protection->Write protection off
-#pragma config PLLEN = ON    // PLL Enable->4x PLL enabled
+#pragma config PLLEN = OFF    // PLL Enable->4x PLL disabled
 #pragma config STVREN = ON    // Stack Overflow/Underflow Reset Enable->Stack Overflow or Underflow will cause a Reset
 #pragma config BORV = LO    // Brown-out Reset Voltage Selection->Brown-out Reset Voltage (Vbor), low trip point selected.
 #pragma config LPBOREN = OFF    // Low Power Brown-out Reset enable bit->LPBOR is disabled
@@ -75,16 +75,12 @@ void SYSTEM_Initialize(void)
 
 void OSCILLATOR_Initialize(void)
 {
-    // SCS FOSC; SPLLEN disabled; IRCF 8MHz_HF; 
-    OSCCON = 0x70;
+    // SCS FOSC; SPLLEN disabled; IRCF 16MHz_HF; 
+    OSCCON = 0x78;
     // TUN 0; 
     OSCTUNE = 0x00;
     // SBOREN disabled; BORFS disabled; 
     BORCON = 0x00;
-    // Wait for PLL to stabilize
-    while(PLLR == 0)
-    {
-    }
 }
 
 void WDT_Initialize(void)

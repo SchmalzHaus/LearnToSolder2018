@@ -39,7 +39,6 @@
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
 */
-#define _XTAL_FREQ 32000000
 
 #include "mcc_generated_files/mcc.h"
 
@@ -65,7 +64,13 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    
+    // Hit the VREGPM bit to put us in low power sleep mode
+//    VREGCONbits.VREGPM = 1;
 
+    // 29.5 mV (1mV/uA) = 29 uA
+    // 1.168V  (1mV/nA) = 1168  
+    
     while (1)
     {
         TRISAbits.TRISA5 = 0;
@@ -74,7 +79,7 @@ void main(void)
         PORTAbits.RA5 = 0;
         __delay_ms(500);    
         TRISAbits.TRISA5 = 1;
-        __delay_ms(500);
+//        __delay_ms(500);
 
         TRISAbits.TRISA4 = 0;
         PORTAbits.RA4 = 1;
@@ -82,7 +87,7 @@ void main(void)
         PORTAbits.RA4 = 0;
         __delay_ms(500);
         TRISAbits.TRISA4 = 1;
-        __delay_ms(500);
+//        __delay_ms(500);
 
         TRISAbits.TRISA0 = 0;
         PORTAbits.RA0 = 1;
@@ -90,7 +95,7 @@ void main(void)
         PORTAbits.RA0 = 0;
         __delay_ms(500);
         TRISAbits.TRISA0 = 1;
-        __delay_ms(500);
+//        __delay_ms(500);
 
         TRISAbits.TRISA1 = 0;
         PORTAbits.RA1 = 1;
@@ -98,7 +103,7 @@ void main(void)
         PORTAbits.RA1 = 0;
         __delay_ms(500);
         TRISAbits.TRISA1 = 1;
-        __delay_ms(500);
+//        __delay_ms(500);
         
         SLEEP();
     }
