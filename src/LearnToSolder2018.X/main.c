@@ -11,6 +11,11 @@
  * 4/10/18 0.1 First debugging code available for new (Charliplexed) board
  *             Simply lights LEDs on Left/Right side in sequence when button
  *             pushed
+ * 4/11/18 0.2 Fixed LED's off state to be outputs all low. This improved sleep
+ *             current draw from about 30 uA to 211 nA. Also, in v0.1 when all
+ *             LED outputs were set to be inputs when sleeping, the current drawn
+ *             from the battery would vary from 500 nA to 30 uA based on ambient
+ *             light levels. (!!)
  */
 
 #include "mcc_generated_files/mcc.h"
@@ -38,7 +43,7 @@
  * D6 on     X   0   1   X   0b11101101 0xED  0b00010000 0x10  Left green
  * D7 on     0   X   X   1   0b11011110 0xDE  0b00100000 0x01  Left blue
  * D8 on     1   X   X   0   0b11011110 0xDE  0b00000001 0x20  Left yellow
- * 
+ * all off   0   0   0   0   0b11001100 0xCC  0b00000000 0x00  All off
  *  
  */
 
@@ -67,7 +72,7 @@ uint8_t LED_Array_TRIS[] = {
   0xED,
   0xDE,
   0xDE,
-  0xFF
+  0xCC
 };
 
 uint8_t LED_Array_PORT[] = {
@@ -117,9 +122,6 @@ void main(void)
   // Disable the Peripheral Interrupts
   //INTERRUPT_PeripheralInterruptDisable();
 
-  // Hit the VREGPM bit to put us in low power sleep mode
-//    VREGCONbits.VREGPM = 1;
-
   // 29.5 mV (1mV/uA) = 29 uA
   // 1.168V  (1mV/nA) = 1168  
     
@@ -158,6 +160,9 @@ void main(void)
 
     SetLEDs(LED_OFF);
     
+    // Hit the VREGPM bit to put us in low power sleep mode
+    VREGCONbits.VREGPM = 1;
+
     SLEEP();
   }
 }
