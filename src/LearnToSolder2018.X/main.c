@@ -1,112 +1,165 @@
-/**
-  Generated Main Source File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.65
-        Device            :  PIC12F1572
-        Driver Version    :  2.00
-*/
-
 /*
-    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
-    software and any derivatives exclusively with Microchip products.
-
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
-    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
-
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-
-    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
-    TERMS.
-*/
+ * Learn To Solder 2018 board software
+ * 
+ * Written by Brian Schmalz of Schmalz Haus LLC
+ * brian@schmalzhaus.com
+ * 
+ * Copyright 2018
+ * All of this code is in the public domain
+ * 
+ * Versions:
+ * 4/10/18 0.1 First debugging code available for new (Charliplexed) board
+ *             Simply lights LEDs on Left/Right side in sequence when button
+ *             pushed
+ */
 
 #include "mcc_generated_files/mcc.h"
+
+#define SLOW_DELAY 500
+
+/* Switch inputs :  (pressed = low)
+ *   Left = S2 = GP2
+ *   Right = S1 = GP3
+ * 
+ * LEDs:
+ * Right : D1 (blue), D2 (yellow), D3, (red), D4, (green)
+ * Left : D5 (red), D6 (green), D7, (blue) D8 (yellow)
+ *
+ * GP0, GP1, GP4 and GP5 are the I/O pins connected to the 8 LEDs
+ *
+ * LED table 
+ * 
+ *          GP0 GP1 GP4 GP5       TRISA           PORTA
+ * D1 on     X   X   1   0   0b11001111 0xCF  0b00010000 0x10  Right blue
+ * D2 on     X   X   0   1   0b11001111 0xCF  0b00100000 0x20  Right yellow
+ * D3 on     1   0   X   X   0b11111100 0xFC  0b00000001 0x01  Right red
+ * D4 on     0   1   X   X   0b11111100 0xFC  0b00000010 0x02  Right green
+ * D5 on     X   1   0   X   0b11101101 0xED  0b00000010 0x02  Left red
+ * D6 on     X   0   1   X   0b11101101 0xED  0b00010000 0x10  Left green
+ * D7 on     0   X   X   1   0b11011110 0xDE  0b00100000 0x01  Left blue
+ * D8 on     1   X   X   0   0b11011110 0xDE  0b00000001 0x20  Left yellow
+ * 
+ *  
+ */
+
+/* Named indexes into LED_Array */
+typedef enum
+{
+  LED_R_BLUE = 0,
+  LED_R_YELLOW,
+  LED_R_RED,
+  LED_R_GREEN,
+  LED_L_RED,
+  LED_L_GREEN,
+  LED_L_BLUE,
+  LED_L_YELLOW,
+  LED_OFF,
+  LED_LAST
+}
+LEDBitPatternIndex_t;
+
+uint8_t LED_Array_TRIS[] = {
+  0xCF,
+  0xCF,
+  0xFC,
+  0xFC,
+  0xED,
+  0xED,
+  0xDE,
+  0xDE,
+  0xFF
+};
+
+uint8_t LED_Array_PORT[] = {
+  0x10,
+  0x20,
+  0x01,
+  0x02,
+  0x02,
+  0x10,
+  0x01,
+  0x20,
+  0x00
+};
+
+void SetLEDs(LEDBitPatternIndex_t newPattern)
+{
+  if (newPattern < LED_LAST)
+  {
+    TRISA = LED_Array_TRIS[newPattern];
+    PORTA = LED_Array_PORT[newPattern];
+  }
+}
+
 
 /*
                          Main application
  */
 void main(void)
 {
-    // initialize the device
-    SYSTEM_Initialize();
+  uint8_t i;
+  
+  // initialize the device
+  SYSTEM_Initialize();
 
-    // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
-    // Use the following macros to:
+  // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
+  // Use the following macros to:
 
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
+  // Enable the Global Interrupts
+  INTERRUPT_GlobalInterruptEnable();
 
-    // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
+  // Enable the Peripheral Interrupts
+  INTERRUPT_PeripheralInterruptEnable();
 
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
+  // Disable the Global Interrupts
+  //INTERRUPT_GlobalInterruptDisable();
 
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
-    
-    // Hit the VREGPM bit to put us in low power sleep mode
+  // Disable the Peripheral Interrupts
+  //INTERRUPT_PeripheralInterruptDisable();
+
+  // Hit the VREGPM bit to put us in low power sleep mode
 //    VREGCONbits.VREGPM = 1;
 
-    // 29.5 mV (1mV/uA) = 29 uA
-    // 1.168V  (1mV/nA) = 1168  
+  // 29.5 mV (1mV/uA) = 29 uA
+  // 1.168V  (1mV/nA) = 1168  
     
-    while (1)
+  while (1)
+  {
+    if (PORTAbits.RA2 == 0)
     {
-        TRISAbits.TRISA5 = 0;
-        PORTAbits.RA5 = 1;
-        __delay_ms(500);
-        PORTAbits.RA5 = 0;
-        __delay_ms(500);    
-        TRISAbits.TRISA5 = 1;
-//        __delay_ms(500);
-
-        TRISAbits.TRISA4 = 0;
-        PORTAbits.RA4 = 1;
-        __delay_ms(500);
-        PORTAbits.RA4 = 0;
-        __delay_ms(500);
-        TRISAbits.TRISA4 = 1;
-//        __delay_ms(500);
-
-        TRISAbits.TRISA0 = 0;
-        PORTAbits.RA0 = 1;
-        __delay_ms(500);
-        PORTAbits.RA0 = 0;
-        __delay_ms(500);
-        TRISAbits.TRISA0 = 1;
-//        __delay_ms(500);
-
-        TRISAbits.TRISA1 = 0;
-        PORTAbits.RA1 = 1;
-        __delay_ms(500);
-        PORTAbits.RA1 = 0;
-        __delay_ms(500);
-        TRISAbits.TRISA1 = 1;
-//        __delay_ms(500);
-        
-        SLEEP();
+      // Left button pushed
+      for (i=0; i < 1; i++)
+      {
+        SetLEDs(LED_L_BLUE);
+        __delay_ms(SLOW_DELAY);
+        SetLEDs(LED_L_YELLOW);
+        __delay_ms(SLOW_DELAY);
+        SetLEDs(LED_L_RED);
+        __delay_ms(SLOW_DELAY);
+        SetLEDs(LED_L_GREEN);
+        __delay_ms(SLOW_DELAY);
+      }
     }
+    else if (PORTAbits.RA3 == 0)
+    {
+      // Right button pushed
+      for (i=0; i < 1; i++)
+      {
+        SetLEDs(LED_R_BLUE);
+        __delay_ms(SLOW_DELAY);
+        SetLEDs(LED_R_YELLOW);
+        __delay_ms(SLOW_DELAY);
+        SetLEDs(LED_R_RED);
+        __delay_ms(SLOW_DELAY);
+        SetLEDs(LED_R_GREEN);
+        __delay_ms(SLOW_DELAY);
+      }
+    }
+
+    SetLEDs(LED_OFF);
+    
+    SLEEP();
+  }
 }
 /**
  End of File
