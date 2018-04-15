@@ -6340,6 +6340,22 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <plain>
 <text x="101.092" y="87.63" size="1.778" layer="95">+</text>
 <text x="91.44" y="87.884" size="1.778" layer="95">-</text>
+<text x="65.532" y="136.144" size="1.27" layer="98">right
+blue</text>
+<text x="80.772" y="136.144" size="1.27" layer="98">right
+yellow</text>
+<text x="65.532" y="120.396" size="1.27" layer="98">right
+red</text>
+<text x="81.026" y="120.65" size="1.27" layer="98">right
+green</text>
+<text x="65.786" y="128.27" size="1.27" layer="98">left
+red</text>
+<text x="81.28" y="128.27" size="1.27" layer="98">left
+green</text>
+<text x="42.926" y="128.27" size="1.27" layer="98">left
+blue</text>
+<text x="57.912" y="128.27" size="1.27" layer="98">left
+yellow</text>
 </plain>
 <instances>
 <instance part="BATTERY" gate="G$1" x="96.52" y="86.36" smashed="yes" rot="R180">
@@ -6347,11 +6363,11 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <attribute name="VALUE" x="100.33" y="92.71" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="D1" gate="G$1" x="71.12" y="137.16" smashed="yes" rot="R180">
-<attribute name="NAME" x="67.818" y="139.192" size="1.778" layer="95" rot="R180"/>
+<attribute name="NAME" x="65.532" y="139.7" size="1.778" layer="95"/>
 <attribute name="VALUE" x="65.405" y="141.732" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="D2" gate="G$1" x="78.74" y="139.7" smashed="yes">
-<attribute name="NAME" x="81.28" y="137.668" size="1.778" layer="95"/>
+<attribute name="NAME" x="80.772" y="139.7" size="1.778" layer="95"/>
 <attribute name="VALUE" x="84.455" y="135.128" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="S1" gate="G$1" x="96.52" y="114.3" smashed="yes">
@@ -6365,27 +6381,27 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <instance part="U$3" gate="G$1" x="144.78" y="10.16"/>
 <instance part="IC1" gate="G$1" x="165.1" y="124.46"/>
 <instance part="D3" gate="G$1" x="71.12" y="121.92" smashed="yes" rot="R180">
-<attribute name="NAME" x="67.818" y="123.952" size="1.778" layer="95" rot="R180"/>
+<attribute name="NAME" x="65.532" y="124.206" size="1.778" layer="95"/>
 <attribute name="VALUE" x="65.405" y="126.492" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="D4" gate="G$1" x="78.74" y="124.46" smashed="yes">
-<attribute name="NAME" x="82.042" y="122.428" size="1.778" layer="95"/>
+<attribute name="NAME" x="81.026" y="124.206" size="1.778" layer="95"/>
 <attribute name="VALUE" x="84.455" y="119.888" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="D5" gate="G$1" x="71.12" y="129.54" smashed="yes" rot="R180">
-<attribute name="NAME" x="67.818" y="131.572" size="1.778" layer="95" rot="R180"/>
+<attribute name="NAME" x="65.532" y="132.08" size="1.778" layer="95"/>
 <attribute name="VALUE" x="65.405" y="134.112" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="D6" gate="G$1" x="78.74" y="132.08" smashed="yes">
-<attribute name="NAME" x="82.042" y="130.048" size="1.778" layer="95"/>
+<attribute name="NAME" x="81.28" y="132.08" size="1.778" layer="95"/>
 <attribute name="VALUE" x="84.455" y="127.508" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="D7" gate="G$1" x="48.26" y="129.54" smashed="yes" rot="R180">
-<attribute name="NAME" x="44.958" y="131.572" size="1.778" layer="95" rot="R180"/>
+<attribute name="NAME" x="43.18" y="132.08" size="1.778" layer="95"/>
 <attribute name="VALUE" x="42.545" y="134.112" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="D8" gate="G$1" x="55.88" y="132.08" smashed="yes">
-<attribute name="NAME" x="59.182" y="130.048" size="1.778" layer="95"/>
+<attribute name="NAME" x="57.912" y="132.334" size="1.778" layer="95"/>
 <attribute name="VALUE" x="61.595" y="127.508" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="GND1" gate="1" x="78.74" y="76.2"/>
@@ -6560,6 +6576,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </schematic>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
