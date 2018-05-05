@@ -23,7 +23,7 @@
 
 #include "mcc_generated_files/mcc.h"
 
-#define SLOW_DELAY 2000
+#define SLOW_DELAY 10000
 
 /* Switch inputs :  (pressed = low)
  *   Left = S2 = GP2
@@ -255,10 +255,14 @@ void main(void)
           break;
 
         case 1:
-          SetLEDOn(LED_R_BLUE);
-          SetLEDOff(LED_R_YELLOW);
-          SetLEDOff(LED_R_RED);
+          SetLEDOn(LED_R_RED);
           SetLEDOff(LED_R_GREEN);
+          SetLEDOff(LED_R_BLUE);
+          SetLEDOff(LED_R_YELLOW);
+          SetLEDOff(LED_L_YELLOW);
+          SetLEDOff(LED_L_BLUE);
+          SetLEDOff(LED_L_GREEN);
+          SetLEDOff(LED_L_RED);
           RightTime = SLOW_DELAY;
           RightState++;
           break;
@@ -266,10 +270,14 @@ void main(void)
         case 2:
           if (RightTime == 0)
           {
-            SetLEDOff(LED_R_BLUE);
-            SetLEDOn(LED_R_YELLOW);
             SetLEDOff(LED_R_RED);
-            SetLEDOff(LED_R_GREEN);
+            SetLEDOn(LED_R_GREEN);
+            SetLEDOff(LED_R_BLUE);
+            SetLEDOff(LED_R_YELLOW);
+            SetLEDOff(LED_L_YELLOW);
+            SetLEDOff(LED_L_BLUE);
+            SetLEDOff(LED_L_GREEN);
+            SetLEDOff(LED_L_RED);
             RightTime = SLOW_DELAY;
             RightState++;
           }
@@ -278,10 +286,14 @@ void main(void)
         case 3:
           if (RightTime == 0)
           {
-            SetLEDOff(LED_R_BLUE);
-            SetLEDOff(LED_R_YELLOW);
-            SetLEDOn(LED_R_RED);
+            SetLEDOff(LED_R_RED);
             SetLEDOff(LED_R_GREEN);
+            SetLEDOn(LED_R_BLUE);
+            SetLEDOff(LED_R_YELLOW);
+            SetLEDOff(LED_L_YELLOW);
+            SetLEDOff(LED_L_BLUE);
+            SetLEDOff(LED_L_GREEN);
+            SetLEDOff(LED_L_RED);
             RightTime = SLOW_DELAY;
             RightState++;
           }
@@ -290,10 +302,14 @@ void main(void)
         case 4:
           if (RightTime == 0)
           {
-            SetLEDOff(LED_R_BLUE);
-            SetLEDOff(LED_R_YELLOW);
             SetLEDOff(LED_R_RED);
-            SetLEDOn(LED_R_GREEN);
+            SetLEDOff(LED_R_GREEN);
+            SetLEDOff(LED_R_BLUE);
+            SetLEDOn(LED_R_YELLOW);
+            SetLEDOff(LED_L_YELLOW);
+            SetLEDOff(LED_L_BLUE);
+            SetLEDOff(LED_L_GREEN);
+            SetLEDOff(LED_L_RED);
             RightTime = SLOW_DELAY;
             RightState++;
           }
@@ -302,10 +318,78 @@ void main(void)
         case 5:
           if (RightTime == 0)
           {
-            SetLEDOff(LED_R_BLUE);
-            SetLEDOff(LED_R_YELLOW);
             SetLEDOff(LED_R_RED);
             SetLEDOff(LED_R_GREEN);
+            SetLEDOff(LED_R_BLUE);
+            SetLEDOff(LED_R_YELLOW);
+            SetLEDOn(LED_L_YELLOW);
+            SetLEDOff(LED_L_BLUE);
+            SetLEDOff(LED_L_GREEN);
+            SetLEDOff(LED_L_RED);
+            RightTime = SLOW_DELAY;
+            RightState++;          
+          }
+          break;
+
+        case 6:
+          if (RightTime == 0)
+          {
+            SetLEDOff(LED_R_RED);
+            SetLEDOff(LED_R_GREEN);
+            SetLEDOff(LED_R_BLUE);
+            SetLEDOff(LED_R_YELLOW);
+            SetLEDOff(LED_L_YELLOW);
+            SetLEDOn(LED_L_BLUE);
+            SetLEDOff(LED_L_GREEN);
+            SetLEDOff(LED_L_RED);
+            RightTime = SLOW_DELAY;
+            RightState++;          
+          }
+          break;
+
+        case 7:
+          if (RightTime == 0)
+          {
+            SetLEDOff(LED_R_RED);
+            SetLEDOff(LED_R_GREEN);
+            SetLEDOff(LED_R_BLUE);
+            SetLEDOff(LED_R_YELLOW);
+            SetLEDOff(LED_L_YELLOW);
+            SetLEDOff(LED_L_BLUE);
+            SetLEDOn(LED_L_GREEN);
+            SetLEDOff(LED_L_RED);
+            RightTime = SLOW_DELAY;
+            RightState++;          
+          }
+          break;
+
+        case 8:
+          if (RightTime == 0)
+          {
+            SetLEDOff(LED_R_RED);
+            SetLEDOff(LED_R_GREEN);
+            SetLEDOff(LED_R_BLUE);
+            SetLEDOff(LED_R_YELLOW);
+            SetLEDOff(LED_L_YELLOW);
+            SetLEDOff(LED_L_BLUE);
+            SetLEDOff(LED_L_GREEN);
+            SetLEDOn(LED_L_RED);
+            RightTime = SLOW_DELAY;
+            RightState++;
+          }
+          break;
+
+        case 9:
+          if (RightTime == 0)
+          {
+            SetLEDOff(LED_R_RED);
+            SetLEDOff(LED_R_GREEN);
+            SetLEDOff(LED_R_BLUE);
+            SetLEDOff(LED_R_YELLOW);
+            SetLEDOff(LED_L_YELLOW);
+            SetLEDOff(LED_L_BLUE);
+            SetLEDOff(LED_L_GREEN);
+            SetLEDOff(LED_L_RED);
             RightState = 0;
           }
           break;
