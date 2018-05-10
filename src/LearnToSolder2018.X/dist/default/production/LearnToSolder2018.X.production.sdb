@@ -3,26 +3,23 @@
 [d edition pro ]
 [d chip 12F1572 ]
 [d frameptr 6 ]
-"107 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-[e E3577 . `uc
-LED_STATE_0 0
-LED_STATE_1 1
-LED_STATE_2 2
-LED_STATE_3 3
-]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"114 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"130 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _SetLEDOn SetLEDOn `(v  1 e 1 0 ]
-"119
+"135
 [v _SetLEDOff SetLEDOff `(v  1 e 1 0 ]
-"124
+"140
 [v _SetAllLEDsOff SetAllLEDsOff `(v  1 e 1 0 ]
-"129
+"146
 [v _CharlieplexLEDs CharlieplexLEDs `(v  1 e 1 0 ]
-"217
+"180
+[v _RunRightFlash RunRightFlash `(v  1 e 1 0 ]
+"252
+[v _RunLeftFlash RunLeftFlash `(v  1 e 1 0 ]
+"325
 [v _main main `(v  1 e 1 0 ]
 "51 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
@@ -48,13 +45,13 @@ LED_STATE_3 3
 [v _IOCAF3_SetInterruptHandler IOCAF3_SetInterruptHandler `(v  1 e 1 0 ]
 "182
 [v _IOCAF3_DefaultInterruptHandler IOCAF3_DefaultInterruptHandler `(v  1 e 1 0 ]
-"63 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"66 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-"104
+"109
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-"119
+"124
 [v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
-"129
+"134
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 [s S145 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -75,7 +72,7 @@ LED_STATE_3 3
 [v _INTCONbits INTCONbits `VES159  1 e 1 @11 ]
 "427
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
-[s S359 . 1 `uc 1 RA0 1 0 :1:0 
+[s S348 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -83,10 +80,10 @@ LED_STATE_3 3
 `uc 1 RA5 1 0 :1:5 
 ]
 "445
-[s S366 . 1 `uc 1 PORTA 1 0 :6:0 
+[s S355 . 1 `uc 1 PORTA 1 0 :6:0 
 ]
-[u S368 . 1 `S359 1 . 1 0 `S366 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES368  1 e 1 @12 ]
+[u S357 . 1 `S348 1 . 1 0 `S355 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES357  1 e 1 @12 ]
 "590
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
 "912
@@ -124,12 +121,12 @@ LED_STATE_3 3
 [v _APFCON APFCON `VEuc  1 e 1 @285 ]
 "2240
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
-[s S381 . 1 `uc 1 . 1 0 :1:0 
+[s S370 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 VREGPM 1 0 :1:1 
 ]
 "2468
-[u S384 . 1 `S381 1 . 1 0 ]
-[v _VREGCONbits VREGCONbits `VES384  1 e 1 @407 ]
+[u S373 . 1 `S370 1 . 1 0 ]
+[v _VREGCONbits VREGCONbits `VES373  1 e 1 @407 ]
 "2741
 [v _WPUA WPUA `VEuc  1 e 1 @524 ]
 "2799
@@ -170,13 +167,25 @@ LED_STATE_3 3
 ]
 [u S68 . 1 `S59 1 . 1 0 `S66 1 . 1 0 ]
 [v _IOCAFbits IOCAFbits `VES68  1 e 1 @915 ]
-"107 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-[v _LEDState LEDState `E3577  1 e 1 0 ]
-"109
-[v _LEDOns LEDOns `VEuc  1 e 1 0 ]
-"111
+"93 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+[v _TRISTable TRISTable `[8]uc  1 s 8 TRISTable ]
+"105
+[v _PORTTable PORTTable `[8]uc  1 s 8 PORTTable ]
+"118
+[v _LEDOns LEDOns `VEuc  1 s 1 LEDOns ]
+"120
+[v _LEDState LEDState `uc  1 s 1 LEDState ]
+"121
+[v _LEDTestBit LEDTestBit `VEuc  1 s 1 LEDTestBit ]
+"122
+[v _PatternRightFlashState PatternRightFlashState `uc  1 e 1 0 ]
+"123
+[v _PatternLeftFlashState PatternLeftFlashState `uc  1 e 1 0 ]
+"125
+[v _Patterns Patterns `uc  1 e 1 0 ]
+"127
 [v _LeftTime LeftTime `VEui  1 e 2 0 ]
-"112
+"128
 [v _RightTime RightTime `VEui  1 e 2 0 ]
 "51 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
 [v _IOCAF2_InterruptHandler IOCAF2_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -186,47 +195,25 @@ LED_STATE_3 3
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "58
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"217 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"325 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"243
-[v main@RightState RightState `uc  1 a 1 3 ]
-"242
-[v main@LeftState LeftState `uc  1 a 1 2 ]
-"245
-[v main@LastRightButtonState LastRightButtonState `uc  1 a 1 1 ]
-"244
-[v main@LastLeftButtonState LastLeftButtonState `uc  1 a 1 0 ]
-"518
+"348
+[v main@LastRightButtonState LastRightButtonState `uc  1 a 1 5 ]
+"347
+[v main@LastLeftButtonState LastLeftButtonState `uc  1 a 1 4 ]
+"418
 } 0
-"129 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"134 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 1 ]
-"131
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"136
 } 0
-"114 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-[v _SetLEDOn SetLEDOn `(v  1 e 1 0 ]
-{
-[v SetLEDOn@LED LED `uc  1 a 1 wreg ]
-[v SetLEDOn@LED LED `uc  1 a 1 wreg ]
-"116
-[v SetLEDOn@LED LED `uc  1 a 1 1 ]
-"117
-} 0
-"119
-[v _SetLEDOff SetLEDOff `(v  1 e 1 0 ]
-{
-[v SetLEDOff@LED LED `uc  1 a 1 wreg ]
-[v SetLEDOff@LED LED `uc  1 a 1 wreg ]
-"121
-[v SetLEDOff@LED LED `uc  1 a 1 1 ]
-"122
-} 0
-"124
+"140 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _SetAllLEDsOff SetAllLEDsOff `(v  1 e 1 0 ]
 {
-"127
+"143
 } 0
 "68 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -238,10 +225,10 @@ LED_STATE_3 3
 {
 "91
 } 0
-"63 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"66 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
-"81
+"84
 } 0
 "55 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -251,13 +238,13 @@ LED_STATE_3 3
 "175
 [v _IOCAF3_SetInterruptHandler IOCAF3_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v IOCAF3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 1 ]
+[v IOCAF3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "177
 } 0
 "145
 [v _IOCAF2_SetInterruptHandler IOCAF2_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v IOCAF2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 1 ]
+[v IOCAF2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "147
 } 0
 "77 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
@@ -265,27 +252,53 @@ LED_STATE_3 3
 {
 "85
 } 0
+"180 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+[v _RunRightFlash RunRightFlash `(v  1 e 1 0 ]
+{
+"250
+} 0
+"252
+[v _RunLeftFlash RunLeftFlash `(v  1 e 1 0 ]
+{
+"320
+} 0
+"130
+[v _SetLEDOn SetLEDOn `(v  1 e 1 0 ]
+{
+[v SetLEDOn@LED LED `uc  1 a 1 wreg ]
+[v SetLEDOn@LED LED `uc  1 a 1 wreg ]
+"132
+[v SetLEDOn@LED LED `uc  1 a 1 0 ]
+"133
+} 0
+"135
+[v _SetLEDOff SetLEDOff `(v  1 e 1 0 ]
+{
+[v SetLEDOff@LED LED `uc  1 a 1 wreg ]
+[v SetLEDOff@LED LED `uc  1 a 1 wreg ]
+"137
+[v SetLEDOff@LED LED `uc  1 a 1 0 ]
+"138
+} 0
 "51 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "66
 } 0
-"104 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"109 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
-"117
+"122
 } 0
-"119
+"124
 [v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
 {
-"127
+"132
 } 0
-"129 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"146 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _CharlieplexLEDs CharlieplexLEDs `(v  1 e 1 0 ]
 {
-"131
-[v CharlieplexLEDs@PortTemp PortTemp `uc  1 a 1 0 ]
-"211
+"178
 } 0
 "110 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]

@@ -60,6 +60,9 @@ void (*TMR0_InterruptHandler)(void);
   Section: TMR0 APIs
 */
 
+//  #define TMR0_RELOAD   0x40    // Each LED serviced for 192uS every 638Hz
+#define TMR0_RELOAD 0x90        // Each LED serviced for 112uS every 1ms
+
 void TMR0_Initialize(void)
 {
     // Set TMR0 to the options selected in the User Interface
@@ -68,10 +71,10 @@ void TMR0_Initialize(void)
     OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xD1 & 0x3F); 
 	
     // TMR0 6; 
-    TMR0 = 0x06;
+    TMR0 = TMR0_RELOAD;
 	
     // Load the TMR value to reload variable
-    timer0ReloadVal= 0x06;
+    timer0ReloadVal= TMR0_RELOAD;
 
     // Clear Interrupt flag before enabling the interrupt
     INTCONbits.TMR0IF = 0;
@@ -80,6 +83,7 @@ void TMR0_Initialize(void)
     INTCONbits.TMR0IE = 1;
 }
 
+#if 0
 uint8_t TMR0_ReadTimer(void)
 {
     uint8_t readVal;
@@ -100,6 +104,7 @@ void TMR0_Reload(void)
     // Write to the Timer0 register
     TMR0 = timer0ReloadVal;
 }
+#endif
 
 void TMR0_ISR(void)
 {
@@ -130,10 +135,12 @@ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR0_InterruptHandler = InterruptHandler;
 }
 
+#if 0
 void TMR0_DefaultInterruptHandler(void){
     // add your TMR0 interrupt custom code
     // or set custom function using TMR0_SetInterruptHandler()
 }
+#endif
 
 /**
   End of File
