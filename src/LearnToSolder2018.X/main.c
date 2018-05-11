@@ -25,6 +25,8 @@
 
 #define SLOW_DELAY 1000
 
+#define NUMBER_OF_PATTERNS  8
+
 /* Switch inputs :  (pressed = low)
  *   Left = S2 = GP2
  *   Right = S1 = GP3
@@ -86,9 +88,11 @@
 #define LED_L_GREEN       0x40  // D6 State 1 A4 high
 #define LED_L_RED         0x80  // D5 State 2 A1 high
 
-// Bits that define the 8 patterns we can be playing
-#define PATTERN_RIGHT_FLASH   0x01
-#define PATTERN_LEFT_FLASH    0x02
+#define PATTERN_OFF_STATE     0 // State for all patterns where they are inactive
+
+// Index for each pattern into the patterns arrays
+#define PATTERN_RIGHT_FLASH   0
+#define PATTERN_LEFT_FLASH    1
 
 static uint8_t TRISTable[] =
 {
@@ -116,16 +120,13 @@ static uint8_t PORTTable[] =
 
 // Each bit represents an LED. Set high to turn that LED on. Interface from mainline to ISR
 static volatile uint8_t LEDOns = 0;
-// Counts up from 0 
+// Counts up from 0 to 7, represents the LED number currently being serviced in the ISR
 static uint8_t LEDState = 0;
-static volatile uint8_t LEDTestBit = 0x01;
-uint8_t PatternRightFlashState = 0;
-uint8_t PatternLeftFlashState = 0;
-// Bitfield of 8 possible patterns that can be playing
-uint8_t Patterns = 0;
 
-volatile uint16_t LeftTime = 0;
-volatile uint16_t RightTime = 0;
+// Each pattern has a delay counter that counts down at a 1ms rate
+volatile uint16_t PatternDelay[NUMBER_OF_PATTERNS];
+// Each pattern has a state variable defining what state it is in
+volatile uint8_t PatternState[NUMBER_OF_PATTERNS];
 
 void SetLEDOn(uint8_t LED)
 {
@@ -145,22 +146,26 @@ void SetAllLEDsOff(void)
 
 void CharlieplexLEDs(void)
 {
+  uint8_t i;
+  
   // Handle time delays for patterns
-  if (LeftTime)
+  for (i=0; i < 8; i++)
   {
-    LeftTime--;
-  }
-  if (RightTime)
-  {
-    RightTime--;
+    if (PatternDelay[i])
+    {
+      PatternDelay[i]--;
+    }
   }
   
   // Default all LEDs to be off
   TRISA = TRISA_LEDS_ALL_OUTUPT;
   PORTA = PORTA_LEDS_ALL_LOW;
 
+  // Create local bit pattern to test for what LED we should be thinking about
+  i = 1 << LEDState;
+  
   // If the bit in LEDOns we're looking at is high (i.e. LED on)
-  if (LEDTestBit & LEDOns)
+  if (i & LEDOns)
   {
     // Then set the tris and port registers from the tables
     TRISA = TRISTable[LEDState];
@@ -169,153 +174,197 @@ void CharlieplexLEDs(void)
 
   // Always increment state and bit
   LEDState++;
-  LEDTestBit = (uint8_t)(LEDTestBit << 1);
   if (LEDState == 8)
   {
     LEDState = 0;
-    LEDTestBit = 0x01;
   }
 }
 
+bool RightButtonPressed(void)
+{
+  return (PORTAbits.RA3 == 0);
+}
+
+bool LeftButtonPressed(void)
+{
+  return (PORTAbits.RA2 == 0);
+}
+
 void RunRightFlash(void)
-{     
-  switch(PatternRightFlashState)
+{
+  if (PatternState[PATTERN_RIGHT_FLASH])
   {
-    case 0:
-      // Do nothing, this side off
-      break;
-
-    case 1:
-      SetLEDOn(LED_R_RED);
-      SetLEDOff(LED_R_GREEN);
-      SetLEDOff(LED_R_BLUE);
-      SetLEDOff(LED_R_YELLOW);
-      RightTime = SLOW_DELAY;
-      PatternRightFlashState++;
-      break;
-
-    case 2:
-      if (RightTime == 0)
+    if (PatternDelay[PATTERN_RIGHT_FLASH] == 0)
+    {
+      switch(PatternState[PATTERN_RIGHT_FLASH])
       {
-        SetLEDOff(LED_R_RED);
-        SetLEDOn(LED_R_GREEN);
-        SetLEDOff(LED_R_BLUE);
-        SetLEDOff(LED_R_YELLOW);
-        RightTime = SLOW_DELAY;
-        PatternRightFlashState++;
-      }
-      break;
+        case 0:
+          // Do nothing, this pattern inactive
+          break;
 
-    case 3:
-      if (RightTime == 0)
+        case 1:
+          SetLEDOn(LED_R_RED);
+          SetLEDOff(LED_R_GREEN);
+          SetLEDOff(LED_R_BLUE);
+          SetLEDOff(LED_R_YELLOW);
+          break;
+
+        case 2:
+          SetLEDOff(LED_R_RED);
+          SetLEDOn(LED_R_GREEN);
+          SetLEDOff(LED_R_BLUE);
+          SetLEDOff(LED_R_YELLOW);
+          break;
+
+        case 3:
+          SetLEDOff(LED_R_RED);
+          SetLEDOff(LED_R_GREEN);
+          SetLEDOn(LED_R_BLUE);
+          SetLEDOff(LED_R_YELLOW);
+          break;
+
+        case 4:
+          SetLEDOff(LED_R_RED);
+          SetLEDOff(LED_R_GREEN);
+          SetLEDOff(LED_R_BLUE);
+          SetLEDOn(LED_R_YELLOW);
+          break;
+
+        case 5:
+          SetLEDOff(LED_R_RED);
+          SetLEDOff(LED_R_GREEN);
+          SetLEDOff(LED_R_BLUE);
+          SetLEDOff(LED_R_YELLOW);
+          PatternState[PATTERN_RIGHT_FLASH] = PATTERN_OFF_STATE;
+          break;
+
+        default:
+          PatternState[PATTERN_RIGHT_FLASH] = 0;
+          break;
+      }
+
+      // Move to the next state
+      if (PatternState[PATTERN_RIGHT_FLASH] != 0)
       {
-        SetLEDOff(LED_R_RED);
-        SetLEDOff(LED_R_GREEN);
-        SetLEDOn(LED_R_BLUE);
-        SetLEDOff(LED_R_YELLOW);
-        RightTime = SLOW_DELAY;
-        PatternRightFlashState++;
+        if ((PatternState[PATTERN_RIGHT_FLASH] == 4) && RightButtonPressed())
+        {
+          PatternState[PATTERN_RIGHT_FLASH] = 1;
+        }
+        else
+        {
+          PatternState[PATTERN_RIGHT_FLASH]++;
+        }
+        PatternDelay[PATTERN_RIGHT_FLASH] = SLOW_DELAY;
       }
-      break;
-
-    case 4:
-      if (RightTime == 0)
-      {
-        SetLEDOff(LED_R_RED);
-        SetLEDOff(LED_R_GREEN);
-        SetLEDOff(LED_R_BLUE);
-        SetLEDOn(LED_R_YELLOW);
-        RightTime = SLOW_DELAY;
-        PatternRightFlashState++;
-      }
-      break;
-
-    case 5:
-      if (RightTime == 0)
-      {
-        SetLEDOff(LED_R_RED);
-        SetLEDOff(LED_R_GREEN);
-        SetLEDOff(LED_R_BLUE);
-        SetLEDOff(LED_R_YELLOW);
-        RightTime = SLOW_DELAY;
-        PatternRightFlashState = 0;          
-        Patterns &= ~PATTERN_RIGHT_FLASH;
-      }
-      break;
-
-    default:
-      PatternRightFlashState = 0;
-      break;
+    }
   }
 }
 
 void RunLeftFlash(void)
 {
-  switch(PatternLeftFlashState)
+  static uint16_t delay = SLOW_DELAY;
+  
+  if (PatternDelay[PATTERN_LEFT_FLASH] == 0)
   {
-    case 0:
-      // Do nothing, this side off
-      break;
+    switch(PatternState[PATTERN_LEFT_FLASH])
+    {
+      case 0:
+        // Do nothing, this pattern inactive
+        delay = SLOW_DELAY;
+        break;
 
-    case 1:
-      SetLEDOn(LED_L_RED);
-      SetLEDOff(LED_L_GREEN);
-      SetLEDOff(LED_L_BLUE);
-      SetLEDOff(LED_L_YELLOW);
-      LeftTime = SLOW_DELAY;
-      PatternLeftFlashState++;
-      break;
+      case 1:
+        SetLEDOn(LED_L_RED);
+        SetLEDOff(LED_L_GREEN);
+        SetLEDOff(LED_L_BLUE);
+        SetLEDOff(LED_L_YELLOW);
+        break;
 
-    case 2:
-      if (LeftTime == 0)
-      {
+      case 2:
         SetLEDOff(LED_L_RED);
         SetLEDOn(LED_L_GREEN);
         SetLEDOff(LED_L_BLUE);
         SetLEDOff(LED_L_YELLOW);
-        LeftTime = SLOW_DELAY;
-        PatternLeftFlashState++;
-      }
-      break;
+        break;
 
-    case 3:
-      if (LeftTime == 0)
-      {
+      case 3:
         SetLEDOff(LED_L_RED);
         SetLEDOff(LED_L_GREEN);
         SetLEDOn(LED_L_BLUE);
         SetLEDOff(LED_L_YELLOW);
-        LeftTime = SLOW_DELAY;
-        PatternLeftFlashState++;
-      }
-      break;
+        break;
 
-    case 4:
-      if (LeftTime == 0)
-      {
+      case 4:
         SetLEDOff(LED_L_RED);
         SetLEDOff(LED_L_GREEN);
         SetLEDOff(LED_L_BLUE);
         SetLEDOn(LED_L_YELLOW);
-        LeftTime = SLOW_DELAY;
-        PatternLeftFlashState++;
-      }
-      break;
+        break;
 
-    case 5:
-      if (LeftTime == 0)
-      {
+      case 5:
         SetLEDOff(LED_L_RED);
         SetLEDOff(LED_L_GREEN);
         SetLEDOff(LED_L_BLUE);
         SetLEDOff(LED_L_YELLOW);
-        PatternLeftFlashState = 0;
-        Patterns &= ~PATTERN_LEFT_FLASH;
-      }
-      break;
+        PatternState[PATTERN_LEFT_FLASH] = PATTERN_OFF_STATE;
+        break;
 
-    default:
-      break;
+      default:
+        PatternState[PATTERN_LEFT_FLASH] = 0;
+        break;
+    }
+
+    // Move to the next state
+    if (PatternState[PATTERN_LEFT_FLASH] != 0)
+    {
+      if ((PatternState[PATTERN_LEFT_FLASH] == 4) && LeftButtonPressed())
+      {
+        PatternState[PATTERN_LEFT_FLASH] = 1;
+        if (delay > 50)
+        {
+          delay -= 15;
+        }
+      }
+      else
+      {
+        PatternState[PATTERN_LEFT_FLASH]++;
+      }
+      PatternDelay[PATTERN_LEFT_FLASH] = delay;
+    }
+  }
+}
+
+void CheckForButtonPushes(void)
+{
+  static bool LastLeftButtonState = false;
+  static bool LastRightButtonState = false;
+
+  // Check left button for press
+  if (LeftButtonPressed())
+  {
+    if (LastLeftButtonState == false)
+    {
+      PatternState[PATTERN_LEFT_FLASH] = 1;
+    }
+    LastLeftButtonState = true;
+  }
+  else
+  {
+    LastLeftButtonState = false;
+  }
+
+  // Check right button for press
+  if (RightButtonPressed())
+  {
+    if (LastRightButtonState == false)
+    {
+      PatternState[PATTERN_RIGHT_FLASH] = 1;
+    }
+    LastRightButtonState = true;
+  }
+  else
+  {
+    LastRightButtonState = false;
   }
 }
 
@@ -343,77 +392,36 @@ void main(void)
 
   // Disable the Peripheral Interrupts
   //INTERRUPT_PeripheralInterruptDisable();
-  
-  uint8_t LastLeftButtonState = 0;
-  uint8_t LastRightButtonState = 0;
+    
+  uint8_t i;
+  bool APatternIsRunning = false;
   
   while (1)
   {
-    while (Patterns)
+    RunRightFlash();
+    RunLeftFlash();
+
+    APatternIsRunning = false;
+    for (i=0; i < 8; i++)
     {
-      if (Patterns & PATTERN_RIGHT_FLASH)
+      if (PatternState[i] != 0)
       {
-        RunRightFlash();
-      }
-      if (Patterns & PATTERN_LEFT_FLASH)
-      {
-        RunLeftFlash();
-      }
-
-
-      // Check left button for press
-      if (PORTAbits.RA2 == 0)
-      {
-        if (LastLeftButtonState == 0)
-        {
-          Patterns |= PATTERN_LEFT_FLASH;
-          PatternLeftFlashState = 1;
-        }
-        LastLeftButtonState = 1;
-      }
-      else
-      {
-        LastLeftButtonState = 0;
-      }
-      
-      // Check right button for press
-      if (PORTAbits.RA3 == 0)
-      {
-        if (LastRightButtonState == 0)
-        {
-          Patterns |= PATTERN_RIGHT_FLASH;
-          PatternRightFlashState = 1;
-        }
-        LastRightButtonState = 1;
-      }
-      else
-      {
-        LastRightButtonState = 0;
+        APatternIsRunning = true;
       }
     }
-    
-    // Hit the VREGPM bit to put us in low power sleep mode
-    VREGCONbits.VREGPM = 1;
-
-    SetAllLEDsOff();
-    
-    __delay_ms(50);
-    
-    SLEEP();
-    
-    LeftTime = 0;
-    RightTime = 0;
-
-    if (PORTAbits.RA2 == 0)
+    if (!APatternIsRunning)
     {
-      Patterns |= PATTERN_LEFT_FLASH;
-      PatternLeftFlashState = 1;
+      // Hit the VREGPM bit to put us in low power sleep mode
+      VREGCONbits.VREGPM = 1;
+
+      SetAllLEDsOff();
+
+      __delay_ms(50);
+
+      SLEEP();      
     }
-    if (PORTAbits.RA3 == 0)
-    {
-      Patterns |= PATTERN_RIGHT_FLASH;
-      PatternRightFlashState = 1;
-    }
+
+    CheckForButtonPushes();
   }
 }
 /**
