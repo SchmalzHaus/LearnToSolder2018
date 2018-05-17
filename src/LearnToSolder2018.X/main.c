@@ -19,6 +19,33 @@
  * 4/15/18 0.3 Added real Charliplexing code, arbitrary LEDs can now be on
  *             Added effect state machines so a button press will restart effect
  *               Both effects are now asynchronous
+ * 
+ * 
+ * Ideas:
+ *   - Add wake timer : force sleep if system has been awake for too long, even
+ *       if one or both buttons is still down
+ *   - Add simple button debounce logic (quick, for rapid button presses)
+ *   - Primary Display pattern :
+ *       On button push, start single LED march along right or left side
+ *       (based on which button was pushed) r, g, b, y, then back b, g, r
+ *       at modest speed. As long as button is held down, decrease time on each
+ *       led. Do this in a logarithmic way so that they don't get all of a
+ *       sudden fast. When all LEDs look like their completely solid on, then 
+ *       start blinking all four at once, slow at first, then faster and faster.
+ *       Each side completely independently controlled. Pattern repeats over
+ *       and over. 
+ *   - Secondary Display patten : If left button held down, while right button
+ *       tapped quickly 4 times, switch to secondary display. For secondary
+ *       display, light up more and more LEDs from right to left as the right
+ *       button is tapped faster and faster. If all LEDs get lit up, signal a
+ *       'win' by blinking all LEDs 10 times rapidly.
+ *   - Menu : If left button is quickly tapped 4 times while right button 
+ *       pressed, go to 'menu' mode. This is where just one LED is lit at a time
+ *       starting at the right. Each press of the left button moves the lit
+ *       LED to the left as long as the right button is held down. When the right
+ *       button is released, then that 'slot' (or 'program') gets run.
+ *   - Slot 1: (Right red)
+ *   - Slot 2: (Right green)
  */
 
 #include "mcc_generated_files/mcc.h"
@@ -94,6 +121,9 @@
 #define PATTERN_RIGHT_FLASH   0
 #define PATTERN_LEFT_FLASH    1
 
+// Maximum number of milliseconds to allow system to run
+#define MAX_AWAKE_TIME_MS     (1UL * 60UL * 1000UL)
+
 static uint8_t TRISTable[] =
 {
   0xFC,     // Right Red
@@ -128,6 +158,10 @@ volatile uint16_t PatternDelay[NUMBER_OF_PATTERNS];
 // Each pattern has a state variable defining what state it is in
 volatile uint8_t PatternState[NUMBER_OF_PATTERNS];
 
+// Counts number of milliseconds we are awake for, and puts us to sleep if 
+// we stay awake for too long
+volatile static uint32_t WakeTimer = 0;
+
 void SetLEDOn(uint8_t LED)
 {
   LEDOns = (uint8_t)(LEDOns | LED);
@@ -147,16 +181,7 @@ void SetAllLEDsOff(void)
 void CharlieplexLEDs(void)
 {
   uint8_t i;
-  
-  // Handle time delays for patterns
-  for (i=0; i < 8; i++)
-  {
-    if (PatternDelay[i])
-    {
-      PatternDelay[i]--;
-    }
-  }
-  
+    
   // Default all LEDs to be off
   TRISA = TRISA_LEDS_ALL_OUTUPT;
   PORTA = PORTA_LEDS_ALL_LOW;
@@ -176,6 +201,21 @@ void CharlieplexLEDs(void)
   LEDState++;
   if (LEDState == 8)
   {
+    // Approximately 1ms has passed since last time LEDState was 0, so
+    // perform the 1ms tasks
+
+    // Always increment wake timer to count this millisecond
+    WakeTimer++;
+
+    // Handle time delays for patterns
+    for (i=0; i < 8; i++)
+    {
+      if (PatternDelay[i])
+      {
+        PatternDelay[i]--;
+      }
+    }
+
     LEDState = 0;
   }
 }
@@ -409,16 +449,19 @@ void main(void)
         APatternIsRunning = true;
       }
     }
-    if (!APatternIsRunning)
+    if (!APatternIsRunning || (WakeTimer > MAX_AWAKE_TIME_MS))
     {
       // Hit the VREGPM bit to put us in low power sleep mode
       VREGCONbits.VREGPM = 1;
 
       SetAllLEDsOff();
+      // Allow LEDsOff command to percolate to LEDs
+      __delay_ms(10);
 
-      __delay_ms(50);
+      SLEEP();
 
-      SLEEP();      
+      // Start off with time = 0;
+      WakeTimer = 0;
     }
 
     CheckForButtonPushes();
