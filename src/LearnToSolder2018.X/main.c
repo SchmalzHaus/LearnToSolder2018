@@ -23,7 +23,7 @@
  * 
  * Ideas:
  *   - Add wake timer : force sleep if system has been awake for too long, even
- *       if one or both buttons is still down
+ *       if one or both buttons is still down (DONE)
  *   - Add simple button debounce logic (quick, for rapid button presses)
  *   - Primary Display pattern :
  *       On button push, start single LED march along right or left side
@@ -50,9 +50,13 @@
 
 #include "mcc_generated_files/mcc.h"
 
-#define SLOW_DELAY 1000
+#define SLOW_DELAY 250
 
 #define NUMBER_OF_PATTERNS  8
+
+#define BUTTON_DEBOUNCE_MS  50
+
+#define SHUTDOWN_DELAY_MS 100
 
 /* Switch inputs :  (pressed = low)
  *   Left = S2 = GP2
@@ -124,6 +128,15 @@
 // Maximum number of milliseconds to allow system to run
 #define MAX_AWAKE_TIME_MS     (1UL * 60UL * 1000UL)
 
+// The five states a button can be in (for debouncing))
+typedef enum {
+    BUTTON_STATE_IDLE = 0,
+    BUTTON_STATE_PRESSED_TIMING,
+    BUTTON_STATE_PRESSED,
+    BUTTON_STATE_RELEASED_TIMING,
+    BUTTON_STATE_RELEASED
+} ButtonState_t;
+
 static uint8_t TRISTable[] =
 {
   0xFC,     // Right Red
@@ -162,6 +175,17 @@ volatile uint8_t PatternState[NUMBER_OF_PATTERNS];
 // we stay awake for too long
 volatile static uint32_t WakeTimer = 0;
 
+// Counts down from SHUTDOWN_DELAY_MS after everything is over before we go to sleep
+volatile static uint8_t ShutdownDelayTimer = 0;
+
+// Countdown 1ms timers to  debounce the button inputs
+volatile static uint8_t LeftDebounceTimer = 0;
+volatile static uint8_t RightDebounceTimer = 0;
+
+// Keep track of the state of each button during debounce
+volatile static ButtonState_t LeftButtonState = BUTTON_STATE_IDLE;
+volatile static ButtonState_t RightButtonState = BUTTON_STATE_IDLE;
+
 void SetLEDOn(uint8_t LED)
 {
   LEDOns = (uint8_t)(LEDOns | LED);
@@ -177,8 +201,11 @@ void SetAllLEDsOff(void)
   LEDOns = 0;
 }
 
-
-void CharlieplexLEDs(void)
+/* This ISR runs every 125 uS. It takes the values in LEDState and lights
+ * up the LEDs appropriately.
+ * It also handles a number of software timer decrementing every 1ms.
+ */
+void TMR0_Callback(void)
 {
   uint8_t i;
     
@@ -187,7 +214,7 @@ void CharlieplexLEDs(void)
   PORTA = PORTA_LEDS_ALL_LOW;
 
   // Create local bit pattern to test for what LED we should be thinking about
-  i = 1 << LEDState;
+  i = (uint8_t)(1 << LEDState);
   
   // If the bit in LEDOns we're looking at is high (i.e. LED on)
   if (i & LEDOns)
@@ -217,92 +244,126 @@ void CharlieplexLEDs(void)
     }
 
     LEDState = 0;
+
+    // Decrement button debounce timers
+    if (LeftDebounceTimer)
+    {
+        LeftDebounceTimer--;
+    }
+
+    if (RightDebounceTimer)
+    {
+        RightDebounceTimer--;
+    }
+    
+    if (ShutdownDelayTimer)
+    {
+      ShutdownDelayTimer--;
+    }
   }
 }
 
-bool RightButtonPressed(void)
+// Return the raw state of the right button input
+bool RightButtonPressedRaw(void)
 {
-  return (PORTAbits.RA3 == 0);
+  return (uint8_t)(PORTAbits.RA3 == 0);
 }
 
+// Return the raw state of the left button input
+bool LeftButtonPressedRaw(void)
+{
+  return (uint8_t)(PORTAbits.RA2 == 0);
+}
+
+// Return the logical (debounced) state of the right button
+bool RightButtonPressed(void)
+{
+    return (RightButtonState == BUTTON_STATE_PRESSED);
+}
+
+// Return the logical (debounced) state of the left button
 bool LeftButtonPressed(void)
 {
-  return (PORTAbits.RA2 == 0);
+    return (LeftButtonState == BUTTON_STATE_PRESSED);
 }
 
 void RunRightFlash(void)
 {
-  if (PatternState[PATTERN_RIGHT_FLASH])
+  static uint16_t right_delay = SLOW_DELAY;
+
+  if (PatternDelay[PATTERN_RIGHT_FLASH] == 0)
   {
-    if (PatternDelay[PATTERN_RIGHT_FLASH] == 0)
+    switch(PatternState[PATTERN_RIGHT_FLASH])
     {
-      switch(PatternState[PATTERN_RIGHT_FLASH])
+      case 0:
+        // Do nothing, this pattern inactive
+        right_delay = SLOW_DELAY;
+        break;
+
+      case 1:
+        SetLEDOn(LED_R_RED);
+        SetLEDOff(LED_R_GREEN);
+        SetLEDOff(LED_R_BLUE);
+        SetLEDOff(LED_R_YELLOW);
+        break;
+
+      case 2:
+        SetLEDOff(LED_R_RED);
+        SetLEDOn(LED_R_GREEN);
+        SetLEDOff(LED_R_BLUE);
+        SetLEDOff(LED_R_YELLOW);
+        break;
+
+      case 3:
+        SetLEDOff(LED_R_RED);
+        SetLEDOff(LED_R_GREEN);
+        SetLEDOn(LED_R_BLUE);
+        SetLEDOff(LED_R_YELLOW);
+        break;
+
+      case 4:
+        SetLEDOff(LED_R_RED);
+        SetLEDOff(LED_R_GREEN);
+        SetLEDOff(LED_R_BLUE);
+        SetLEDOn(LED_R_YELLOW);
+        break;
+
+      case 5:
+        SetLEDOff(LED_R_RED);
+        SetLEDOff(LED_R_GREEN);
+        SetLEDOff(LED_R_BLUE);
+        SetLEDOff(LED_R_YELLOW);
+        PatternState[PATTERN_RIGHT_FLASH] = PATTERN_OFF_STATE;
+        break;
+
+      default:
+        PatternState[PATTERN_RIGHT_FLASH] = 0;
+        break;
+    }
+
+    // Move to the next state
+    if (PatternState[PATTERN_RIGHT_FLASH] != 0)
+    {
+      if ((PatternState[PATTERN_RIGHT_FLASH] == 4) && RightButtonPressed())
       {
-        case 0:
-          // Do nothing, this pattern inactive
-          break;
-
-        case 1:
-          SetLEDOn(LED_R_RED);
-          SetLEDOff(LED_R_GREEN);
-          SetLEDOff(LED_R_BLUE);
-          SetLEDOff(LED_R_YELLOW);
-          break;
-
-        case 2:
-          SetLEDOff(LED_R_RED);
-          SetLEDOn(LED_R_GREEN);
-          SetLEDOff(LED_R_BLUE);
-          SetLEDOff(LED_R_YELLOW);
-          break;
-
-        case 3:
-          SetLEDOff(LED_R_RED);
-          SetLEDOff(LED_R_GREEN);
-          SetLEDOn(LED_R_BLUE);
-          SetLEDOff(LED_R_YELLOW);
-          break;
-
-        case 4:
-          SetLEDOff(LED_R_RED);
-          SetLEDOff(LED_R_GREEN);
-          SetLEDOff(LED_R_BLUE);
-          SetLEDOn(LED_R_YELLOW);
-          break;
-
-        case 5:
-          SetLEDOff(LED_R_RED);
-          SetLEDOff(LED_R_GREEN);
-          SetLEDOff(LED_R_BLUE);
-          SetLEDOff(LED_R_YELLOW);
-          PatternState[PATTERN_RIGHT_FLASH] = PATTERN_OFF_STATE;
-          break;
-
-        default:
-          PatternState[PATTERN_RIGHT_FLASH] = 0;
-          break;
+        PatternState[PATTERN_RIGHT_FLASH] = 1;
+        if (right_delay > 5)
+        {
+          right_delay = ((right_delay * 90)/100);
+        }
       }
-
-      // Move to the next state
-      if (PatternState[PATTERN_RIGHT_FLASH] != 0)
+      else
       {
-        if ((PatternState[PATTERN_RIGHT_FLASH] == 4) && RightButtonPressed())
-        {
-          PatternState[PATTERN_RIGHT_FLASH] = 1;
-        }
-        else
-        {
-          PatternState[PATTERN_RIGHT_FLASH]++;
-        }
-        PatternDelay[PATTERN_RIGHT_FLASH] = SLOW_DELAY;
+        PatternState[PATTERN_RIGHT_FLASH]++;
       }
+      PatternDelay[PATTERN_RIGHT_FLASH] = right_delay;
     }
   }
 }
 
 void RunLeftFlash(void)
 {
-  static uint16_t delay = SLOW_DELAY;
+  static uint16_t left_delay = SLOW_DELAY;
   
   if (PatternDelay[PATTERN_LEFT_FLASH] == 0)
   {
@@ -310,7 +371,7 @@ void RunLeftFlash(void)
     {
       case 0:
         // Do nothing, this pattern inactive
-        delay = SLOW_DELAY;
+        left_delay = SLOW_DELAY;
         break;
 
       case 1:
@@ -360,26 +421,90 @@ void RunLeftFlash(void)
       if ((PatternState[PATTERN_LEFT_FLASH] == 4) && LeftButtonPressed())
       {
         PatternState[PATTERN_LEFT_FLASH] = 1;
-        if (delay > 50)
+        if (left_delay > 5)
         {
-          delay -= 15;
+          left_delay = (left_delay * 90)/100;
         }
       }
       else
       {
         PatternState[PATTERN_LEFT_FLASH]++;
       }
-      PatternDelay[PATTERN_LEFT_FLASH] = delay;
+      PatternDelay[PATTERN_LEFT_FLASH] = left_delay;
     }
   }
 }
 
-void CheckForButtonPushes(void)
+// Return true if either button is currently down (raw)
+bool CheckForButtonPushes(void)
 {
   static bool LastLeftButtonState = false;
   static bool LastRightButtonState = false;
 
-  // Check left button for press
+  // Debounce left button press
+  if (LeftButtonPressedRaw())
+  {
+    if (LeftButtonState == BUTTON_STATE_PRESSED_TIMING)
+    {
+      if (LeftDebounceTimer == 0)
+      {
+        LeftButtonState = BUTTON_STATE_PRESSED;
+      }
+    }
+    else if (LeftButtonState != BUTTON_STATE_PRESSED)
+    {
+      LeftButtonState = BUTTON_STATE_PRESSED_TIMING;
+      LeftDebounceTimer = BUTTON_DEBOUNCE_MS;
+    }
+  }
+  else
+  {
+    if (LeftButtonState == BUTTON_STATE_RELEASED_TIMING)
+    {
+      if (LeftDebounceTimer == 0)
+      {
+        LeftButtonState = BUTTON_STATE_RELEASED;
+      }
+    }
+    else if (LeftButtonState != BUTTON_STATE_RELEASED)
+    {
+      LeftButtonState = BUTTON_STATE_RELEASED_TIMING;
+      LeftDebounceTimer = BUTTON_DEBOUNCE_MS;
+    }
+  }
+    
+  // Debounce right button  press
+  if (RightButtonPressedRaw())
+  {
+    if (RightButtonState == BUTTON_STATE_PRESSED_TIMING)
+    {
+      if (RightDebounceTimer == 0)
+      {
+        RightButtonState = BUTTON_STATE_PRESSED;
+      }
+    }
+    else if (RightButtonState != BUTTON_STATE_PRESSED)
+    {
+      RightButtonState = BUTTON_STATE_PRESSED_TIMING;
+      RightDebounceTimer = BUTTON_DEBOUNCE_MS;
+    }
+  }
+  else
+  {
+    if (RightButtonState == BUTTON_STATE_RELEASED_TIMING)
+    {
+      if (RightDebounceTimer == 0)
+      {
+        RightButtonState = BUTTON_STATE_RELEASED;
+      }
+    }
+    else if (RightButtonState != BUTTON_STATE_RELEASED)
+    {
+      RightButtonState = BUTTON_STATE_RELEASED_TIMING;
+      RightDebounceTimer = BUTTON_DEBOUNCE_MS;
+    }
+  }
+
   if (LeftButtonPressed())
   {
     if (LastLeftButtonState == false)
@@ -406,6 +531,8 @@ void CheckForButtonPushes(void)
   {
     LastRightButtonState = false;
   }
+  
+  return ((bool)(LeftButtonPressedRaw() || RightButtonPressedRaw()));
 }
 
 /*
@@ -416,7 +543,7 @@ void main(void)
   // initialize the device
   SYSTEM_Initialize();
 
-  TMR0_SetInterruptHandler(CharlieplexLEDs);
+  TMR0_SetInterruptHandler(TMR0_Callback);
 
   // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
   // Use the following macros to:
@@ -449,19 +576,28 @@ void main(void)
         APatternIsRunning = true;
       }
     }
-    if (!APatternIsRunning || (WakeTimer > MAX_AWAKE_TIME_MS))
+    if ((!APatternIsRunning && RightDebounceTimer == 0 && LeftDebounceTimer == 0) || (WakeTimer > MAX_AWAKE_TIME_MS))
     {
-      // Hit the VREGPM bit to put us in low power sleep mode
-      VREGCONbits.VREGPM = 1;
-
       SetAllLEDsOff();
       // Allow LEDsOff command to percolate to LEDs
-      __delay_ms(10);
+      __delay_ms(5);
 
-      SLEEP();
+      ShutdownDelayTimer = SHUTDOWN_DELAY_MS;
 
-      // Start off with time = 0;
-      WakeTimer = 0;
+      while (ShutdownDelayTimer && !CheckForButtonPushes())
+      {
+      }
+
+      if (ShutdownDelayTimer == 0)
+      {
+          // Hit the VREGPM bit to put us in low power sleep mode
+        VREGCONbits.VREGPM = 1;
+
+        SLEEP();
+
+        // Start off with time = 0;
+        WakeTimer = 0;
+      }
     }
 
     CheckForButtonPushes();
