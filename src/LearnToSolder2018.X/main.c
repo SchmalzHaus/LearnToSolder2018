@@ -23,8 +23,8 @@
  * 
  * Ideas:
  *   - Add wake timer : force sleep if system has been awake for too long, even
- *       if one or both buttons is still down (DONE)
- *   - Add simple button debounce logic (quick, for rapid button presses)
+ *       if one or both buttons is still down (done)
+ *   - Add simple button debounce logic (quick, for rapid button presses) (done)
  *   - Primary Display pattern :
  *       On button push, start single LED march along right or left side
  *       (based on which button was pushed) r, g, b, y, then back b, g, r
@@ -33,7 +33,7 @@
  *       sudden fast. When all LEDs look like their completely solid on, then 
  *       start blinking all four at once, slow at first, then faster and faster.
  *       Each side completely independently controlled. Pattern repeats over
- *       and over. 
+ *       and over. (done)
  *   - Secondary Display patten : If left button held down, while right button
  *       tapped quickly 4 times, switch to secondary display. For secondary
  *       display, light up more and more LEDs from right to left as the right
@@ -126,7 +126,7 @@
 #define PATTERN_LEFT_FLASH    1
 
 // Maximum number of milliseconds to allow system to run
-#define MAX_AWAKE_TIME_MS     (1UL * 60UL * 1000UL)
+#define MAX_AWAKE_TIME_MS     (5UL * 60UL * 1000UL)
 
 // The five states a button can be in (for debouncing))
 typedef enum {
@@ -331,11 +331,46 @@ void RunRightFlash(void)
       case 5:
         SetLEDOff(LED_R_RED);
         SetLEDOff(LED_R_GREEN);
+        SetLEDOn(LED_R_BLUE);
+        SetLEDOff(LED_R_YELLOW);
+        break;
+
+      case 6:
+        SetLEDOff(LED_R_RED);
+        SetLEDOn(LED_R_GREEN);
+        SetLEDOff(LED_R_BLUE);
+        SetLEDOff(LED_R_YELLOW);
+        break;
+
+      case 7:
+        SetLEDOn(LED_R_RED);
+        SetLEDOff(LED_R_GREEN);
+        SetLEDOff(LED_R_BLUE);
+        SetLEDOff(LED_R_YELLOW);
+        break;
+
+      case 8:
+        SetLEDOn(LED_R_RED);
+        SetLEDOn(LED_R_GREEN);
+        SetLEDOn(LED_R_BLUE);
+        SetLEDOn(LED_R_YELLOW);
+        break;
+
+      case 9:
+        SetLEDOff(LED_R_RED);
+        SetLEDOff(LED_R_GREEN);
+        SetLEDOff(LED_R_BLUE);
+        SetLEDOff(LED_R_YELLOW);
+        break;
+
+      case 10:
+        SetLEDOff(LED_R_RED);
+        SetLEDOff(LED_R_GREEN);
         SetLEDOff(LED_R_BLUE);
         SetLEDOff(LED_R_YELLOW);
         PatternState[PATTERN_RIGHT_FLASH] = PATTERN_OFF_STATE;
         break;
-
+        
       default:
         PatternState[PATTERN_RIGHT_FLASH] = 0;
         break;
@@ -344,12 +379,30 @@ void RunRightFlash(void)
     // Move to the next state
     if (PatternState[PATTERN_RIGHT_FLASH] != 0)
     {
-      if ((PatternState[PATTERN_RIGHT_FLASH] == 4) && RightButtonPressed())
+      if ((PatternState[PATTERN_RIGHT_FLASH] == 7) && RightButtonPressed())
       {
-        PatternState[PATTERN_RIGHT_FLASH] = 1;
-        if (right_delay > 5)
+        if (right_delay > 3)
         {
-          right_delay = ((right_delay * 90)/100);
+          right_delay = ((right_delay * 80)/100);
+          PatternState[PATTERN_RIGHT_FLASH] = 2;
+        }
+        else
+        {
+          PatternState[PATTERN_RIGHT_FLASH] = 8;
+          right_delay = SLOW_DELAY;
+        }
+      }
+      else if ((PatternState[PATTERN_RIGHT_FLASH] == 9) && RightButtonPressed())
+      {
+        if (right_delay > 10)
+        {
+          right_delay = ((right_delay * 95)/100);
+          PatternState[PATTERN_RIGHT_FLASH] = 8;
+        }
+        else
+        {
+          PatternState[PATTERN_RIGHT_FLASH] = 1;
+          right_delay = SLOW_DELAY;
         }
       }
       else
@@ -405,6 +458,41 @@ void RunLeftFlash(void)
       case 5:
         SetLEDOff(LED_L_RED);
         SetLEDOff(LED_L_GREEN);
+        SetLEDOn(LED_L_BLUE);
+        SetLEDOff(LED_L_YELLOW);
+        break;
+
+      case 6:
+        SetLEDOff(LED_L_RED);
+        SetLEDOn(LED_L_GREEN);
+        SetLEDOff(LED_L_BLUE);
+        SetLEDOff(LED_L_YELLOW);
+        break;
+
+      case 7:
+        SetLEDOn(LED_L_RED);
+        SetLEDOff(LED_L_GREEN);
+        SetLEDOff(LED_L_BLUE);
+        SetLEDOff(LED_L_YELLOW);
+        break;
+
+      case 8:
+        SetLEDOn(LED_L_RED);
+        SetLEDOn(LED_L_GREEN);
+        SetLEDOn(LED_L_BLUE);
+        SetLEDOn(LED_L_YELLOW);
+        break;
+
+      case 9:
+        SetLEDOff(LED_L_RED);
+        SetLEDOff(LED_L_GREEN);
+        SetLEDOff(LED_L_BLUE);
+        SetLEDOff(LED_L_YELLOW);
+        break;
+
+      case 10:
+        SetLEDOff(LED_L_RED);
+        SetLEDOff(LED_L_GREEN);
         SetLEDOff(LED_L_BLUE);
         SetLEDOff(LED_L_YELLOW);
         PatternState[PATTERN_LEFT_FLASH] = PATTERN_OFF_STATE;
@@ -418,12 +506,30 @@ void RunLeftFlash(void)
     // Move to the next state
     if (PatternState[PATTERN_LEFT_FLASH] != 0)
     {
-      if ((PatternState[PATTERN_LEFT_FLASH] == 4) && LeftButtonPressed())
+      if ((PatternState[PATTERN_LEFT_FLASH] == 7) && LeftButtonPressed())
       {
-        PatternState[PATTERN_LEFT_FLASH] = 1;
-        if (left_delay > 5)
+        if (left_delay > 3)
         {
-          left_delay = (left_delay * 90)/100;
+          left_delay = ((left_delay * 80)/100);
+          PatternState[PATTERN_LEFT_FLASH] = 2;
+        }
+        else
+        {
+          PatternState[PATTERN_LEFT_FLASH] = 8;
+          left_delay = SLOW_DELAY;
+        }
+      }
+      else if ((PatternState[PATTERN_LEFT_FLASH] == 9) && LeftButtonPressed())
+      {
+        if (left_delay > 10)
+        {
+          left_delay = ((left_delay * 95)/100);
+          PatternState[PATTERN_LEFT_FLASH] = 8;
+        }
+        else
+        {
+          PatternState[PATTERN_LEFT_FLASH] = 1;
+          left_delay = SLOW_DELAY;
         }
       }
       else
