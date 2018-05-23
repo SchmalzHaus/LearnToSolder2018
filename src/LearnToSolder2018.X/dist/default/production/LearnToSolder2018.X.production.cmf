@@ -12,51 +12,53 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\LearnToSolder2018.X.production.obj
-cinit CODE 0 18 18 17 2
-text1 CODE 0 460 460 6 2
-text2 CODE 0 481 481 3 2
-text3 CODE 0 478 478 5 2
-text4 CODE 0 47D 47D 4 2
-text5 CODE 0 3C2 3C2 F 2
-text6 CODE 0 36E 36E 24 2
-text7 CODE 0 466 466 6 2
-text8 CODE 0 46C 46C 6 2
-text9 CODE 0 43F 43F 7 2
-text10 CODE 0 2F 2F E2 2
-text11 CODE 0 111 111 E2 2
-text12 CODE 0 392 392 1C 2
-text13 CODE 0 339 339 35 2
-text14 CODE 0 41F 41F 8 2
-text15 CODE 0 427 427 8 2
-text16 CODE 0 1F3 1F3 83 2
-text17 CODE 0 446 446 7 2
-text18 CODE 0 42F 42F 8 2
-text19 CODE 0 44D 44D 7 2
-text20 CODE 0 437 437 8 2
-text22 CODE 0 472 472 6 2
-text23 CODE 0 40B 40B B 2
-text24 CODE 0 276 276 63 2
-text25 CODE 0 416 416 9 2
-text26 CODE 0 3D1 3D1 D 2
-text27 CODE 0 484 484 1 2
-text28 CODE 0 3DE 3DE D 2
-text29 CODE 0 485 485 1 2
-nvBANK0 BANK0 1 65 65 7 1
-maintext CODE 0 2D9 2D9 60 2
-cstackCOMMON COMMON 1 70 70 6 1
-cstackBANK0 BANK0 1 55 55 10 1
-inittext CODE 0 454 454 6 2
-intentry CODE 0 4 4 13 2
-bssBANK0 BANK0 1 20 20 21 1
-idataBANK0 CODE 0 3AE 3AE 14 2
-swtext1 CONST 0 3EB 3EB B 2
-swtext2 CONST 0 400 400 B 2
-dataBANK0 BANK0 1 41 41 14 1
-clrtext CODE 0 45A 45A 6 2
-bssCOMMON COMMON 1 76 76 4 1
-$C:\Users\bschmalz\AppData\Local\Temp\safc.obj
+cinit CODE 0 12 12 2F 2
+text1 CODE 0 55D 55D 5 2
+text2 CODE 0 587 587 3 2
+text3 CODE 0 57B 57B 4 2
+text4 CODE 0 57F 57F 4 2
+text5 CODE 0 503 503 B 2
+text6 CODE 0 4B0 4B0 24 2
+text7 CODE 0 562 562 5 2
+text8 CODE 0 54B 54B 6 2
+text9 CODE 0 537 537 7 2
+text10 CODE 0 28A 28A C2 2
+text11 CODE 0 1C3 1C3 C7 2
+text12 CODE 0 4D4 4D4 15 2
+text13 CODE 0 48B 48B 25 2
+text14 CODE 0 41 41 182 2
+text15 CODE 0 583 583 4 2
+text16 CODE 0 567 567 5 2
+text17 CODE 0 34C 34C A1 2
+text18 CODE 0 551 551 6 2
+text19 CODE 0 56C 56C 5 2
+text20 CODE 0 557 557 6 2
+text21 CODE 0 571 571 5 2
+text23 CODE 0 576 576 5 2
+text24 CODE 0 524 524 A 2
+text25 CODE 0 43F 43F 4C 2
+text26 CODE 0 53E 53E 7 2
+text27 CODE 0 4E9 4E9 D 2
+text28 CODE 0 58A 58A 1 2
+text29 CODE 0 4F6 4F6 D 2
+text30 CODE 0 58B 58B 1 2
+nvBANK0 BANK0 1 69 69 7 1
+maintext CODE 0 3ED 3ED 52 2
+cstackCOMMON COMMON 1 70 70 7 1
+cstackBANK0 BANK0 1 5F 5F A 1
+cstackBANK1 BANK1 1 A8 A8 2 1
+intentry CODE 0 4 4 D 2
+bssBANK0 BANK0 1 20 20 32 1
+swtext1 CONST 0 50E 50E B 2
+swtext2 CONST 0 519 519 B 2
+swtext3 CONST 0 52E 52E 9 2
+dataBANK0 BANK0 1 52 52 D 1
+dataBANK1 BANK1 1 A0 A0 8 1
+clrtext CODE 0 545 545 6 2
+bssCOMMON COMMON 1 77 77 4 1
+$C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
 reset_vec CODE 0 0 0 1 2
-end_init CODE 0 17 17 1 2
+end_init CODE 0 11 11 1 2
 config CONFIG 0 8007 8007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -64,18 +66,14 @@ config CONFIG 0 8007 8007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 6C-6F 1
-RAM A0-EF 1
+RAM AA-EF 1
 RAM 120-16F 1
-BANK0 6C-6F 1
-BANK1 A0-EF 1
+BANK1 AA-EF 1
 BANK2 120-16F 1
 CONST 1-3 2
-CONST 3F6-3FF 2
-CONST 486-7FF 2
+CONST 58C-7FF 2
 ENTRY 1-3 2
-ENTRY 3F6-3FF 2
-ENTRY 486-7FF 2
+ENTRY 58C-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -99,10 +97,9 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 204C-20EF 1
+STACK 205A-20EF 1
 CODE 1-3 2
-CODE 3F6-3FF 2
-CODE 486-7FF 2
+CODE 58C-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -114,13 +111,11 @@ SFR7 380-3EF 1
 SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-20EF 1
-COMMON 7A-7D 1
+COMMON 7B-7D 1
 STRCODE 1-3 2
-STRCODE 3F6-3FF 2
-STRCODE 486-7FF 2
+STRCODE 58C-7FF 2
 STRING 1-3 2
-STRING 3F6-3FF 2
-STRING 486-7FF 2
+STRING 58C-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -135,409 +130,546 @@ STRING 486-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\LearnToSolder2018.X.production.obj
-18 cinit CODE >1883:C:\Users\bschmalz\AppData\Local\Temp\safc.
-18 cinit CODE >1886:C:\Users\bschmalz\AppData\Local\Temp\safc.
-18 cinit CODE >1970:C:\Users\bschmalz\AppData\Local\Temp\safc.
-19 cinit CODE >1971:C:\Users\bschmalz\AppData\Local\Temp\safc.
-1A cinit CODE >1972:C:\Users\bschmalz\AppData\Local\Temp\safc.
-1B cinit CODE >1973:C:\Users\bschmalz\AppData\Local\Temp\safc.
-1C cinit CODE >1974:C:\Users\bschmalz\AppData\Local\Temp\safc.
-1D cinit CODE >1975:C:\Users\bschmalz\AppData\Local\Temp\safc.
-1E cinit CODE >1976:C:\Users\bschmalz\AppData\Local\Temp\safc.
-1F cinit CODE >1977:C:\Users\bschmalz\AppData\Local\Temp\safc.
-20 cinit CODE >1978:C:\Users\bschmalz\AppData\Local\Temp\safc.
-21 cinit CODE >1979:C:\Users\bschmalz\AppData\Local\Temp\safc.
-22 cinit CODE >1996:C:\Users\bschmalz\AppData\Local\Temp\safc.
-23 cinit CODE >1997:C:\Users\bschmalz\AppData\Local\Temp\safc.
-24 cinit CODE >1998:C:\Users\bschmalz\AppData\Local\Temp\safc.
-25 cinit CODE >1999:C:\Users\bschmalz\AppData\Local\Temp\safc.
-26 cinit CODE >2003:C:\Users\bschmalz\AppData\Local\Temp\safc.
-27 cinit CODE >2004:C:\Users\bschmalz\AppData\Local\Temp\safc.
-28 cinit CODE >2005:C:\Users\bschmalz\AppData\Local\Temp\safc.
-29 cinit CODE >2006:C:\Users\bschmalz\AppData\Local\Temp\safc.
-2A cinit CODE >2007:C:\Users\bschmalz\AppData\Local\Temp\safc.
-2B cinit CODE >2008:C:\Users\bschmalz\AppData\Local\Temp\safc.
-2C cinit CODE >2014:C:\Users\bschmalz\AppData\Local\Temp\safc.
-2C cinit CODE >2016:C:\Users\bschmalz\AppData\Local\Temp\safc.
-2D cinit CODE >2017:C:\Users\bschmalz\AppData\Local\Temp\safc.
-2E cinit CODE >2018:C:\Users\bschmalz\AppData\Local\Temp\safc.
-4 intentry CODE >288:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-4 intentry CODE >51:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
-9 intentry CODE >54:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
-C intentry CODE >56:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
-D intentry CODE >57:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
-E intentry CODE >58:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
-11 intentry CODE >60:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
-12 intentry CODE >66:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
-485 text29 CODE >152:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-485 text29 CODE >155:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3DE text28 CODE >130:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3DE text28 CODE >135:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3E3 text28 CODE >137:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3E8 text28 CODE >139:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3EA text28 CODE >140:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-484 text27 CODE >182:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-484 text27 CODE >185:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3D1 text26 CODE >160:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3D1 text26 CODE >165:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3D6 text26 CODE >167:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3DB text26 CODE >169:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3DD text26 CODE >170:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-416 text25 CODE >110:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-416 text25 CODE >113:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-419 text25 CODE >115:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-41A text25 CODE >119:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-41D text25 CODE >121:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-276 text24 CODE >208:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-276 text24 CODE >213:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-279 text24 CODE >214:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-27B text24 CODE >217:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-286 text24 CODE >220:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-28A text24 CODE >223:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-291 text24 CODE >224:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-298 text24 CODE >228:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-29C text24 CODE >229:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2A0 text24 CODE >235:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2A8 text24 CODE >238:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2AD text24 CODE >240:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2B5 text24 CODE >242:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2BF text24 CODE >238:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2C7 text24 CODE >246:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2C9 text24 CODE >249:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2CC text24 CODE >251:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2CE text24 CODE >252:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2CE text24 CODE >254:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2D1 text24 CODE >256:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2D3 text24 CODE >257:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2D3 text24 CODE >259:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2D6 text24 CODE >261:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2D8 text24 CODE >262:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-40B text23 CODE >123:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-40B text23 CODE >127:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-410 text23 CODE >129:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-472 text22 CODE >108:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-472 text22 CODE >112:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-473 text22 CODE >114:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-476 text22 CODE >118:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-477 text22 CODE >121:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-437 text20 CODE >285:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-437 text20 CODE >287:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-44D text19 CODE >273:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-44D text19 CODE >275:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-42F text18 CODE >279:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-42F text18 CODE >281:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-446 text17 CODE >267:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-446 text17 CODE >269:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1F3 text16 CODE >545:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1F3 text16 CODE >551:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1F7 text16 CODE >553:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1FA text16 CODE >555:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1FD text16 CODE >557:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1FF text16 CODE >560:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-203 text16 CODE >562:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-205 text16 CODE >568:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-209 text16 CODE >570:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-20C text16 CODE >572:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-210 text16 CODE >574:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-211 text16 CODE >575:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-215 text16 CODE >577:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-219 text16 CODE >578:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-21D text16 CODE >583:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-221 text16 CODE >585:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-224 text16 CODE >587:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-227 text16 CODE >589:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-229 text16 CODE >592:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-22D text16 CODE >594:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-22F text16 CODE >600:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-233 text16 CODE >602:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-236 text16 CODE >604:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-23A text16 CODE >606:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-23B text16 CODE >607:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-23F text16 CODE >609:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-243 text16 CODE >610:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-247 text16 CODE >614:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-24B text16 CODE >616:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-24F text16 CODE >618:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-253 text16 CODE >620:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-255 text16 CODE >621:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-256 text16 CODE >624:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-258 text16 CODE >628:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-25C text16 CODE >630:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-260 text16 CODE >632:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-264 text16 CODE >634:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-266 text16 CODE >635:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-267 text16 CODE >638:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-269 text16 CODE >641:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-427 text15 CODE >194:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-428 text15 CODE >196:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-42E text15 CODE >197:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-41F text14 CODE >189:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-420 text14 CODE >191:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-426 text14 CODE >192:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-339 text13 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-339 text13 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-33C text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-340 text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-342 text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-344 text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-349 text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-34D text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-34E text13 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-353 text13 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-35B text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-35F text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-360 text13 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-365 text13 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-369 text13 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
-392 text12 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-392 text12 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-394 text12 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-397 text12 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-39B text12 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3A0 text12 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3A5 text12 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-3A9 text12 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-400 swtext2 CONST >423:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-111 text11 CODE >417:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-111 text11 CODE >421:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-117 text11 CODE >427:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-11B text11 CODE >428:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-11C text11 CODE >431:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-11E text11 CODE >432:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-120 text11 CODE >433:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-122 text11 CODE >434:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-124 text11 CODE >435:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-125 text11 CODE >438:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-127 text11 CODE >439:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-129 text11 CODE >440:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-12B text11 CODE >441:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-12D text11 CODE >442:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-12E text11 CODE >445:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-130 text11 CODE >446:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-132 text11 CODE >447:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-134 text11 CODE >448:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-136 text11 CODE >449:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-137 text11 CODE >452:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-139 text11 CODE >453:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-13B text11 CODE >454:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-13D text11 CODE >455:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-13F text11 CODE >456:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-140 text11 CODE >459:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-142 text11 CODE >460:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-144 text11 CODE >461:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-146 text11 CODE >462:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-148 text11 CODE >463:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-149 text11 CODE >466:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-14B text11 CODE >467:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-14D text11 CODE >468:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-14F text11 CODE >469:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-151 text11 CODE >470:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-152 text11 CODE >473:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-154 text11 CODE >474:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-156 text11 CODE >475:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-158 text11 CODE >476:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-15A text11 CODE >477:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-15B text11 CODE >480:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-15D text11 CODE >481:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-15F text11 CODE >482:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-161 text11 CODE >483:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-163 text11 CODE >484:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-164 text11 CODE >487:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-166 text11 CODE >488:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-168 text11 CODE >489:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-16A text11 CODE >490:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-16C text11 CODE >491:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-16D text11 CODE >494:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-16F text11 CODE >495:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-171 text11 CODE >496:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-173 text11 CODE >497:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-175 text11 CODE >498:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-176 text11 CODE >502:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-177 text11 CODE >504:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-178 text11 CODE >423:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-182 text11 CODE >507:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-186 text11 CODE >509:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-18E text11 CODE >511:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-196 text11 CODE >513:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1AE text11 CODE >514:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1B0 text11 CODE >518:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1B2 text11 CODE >522:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1BB text11 CODE >524:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1C3 text11 CODE >526:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1DB text11 CODE >527:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1DF text11 CODE >528:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1E0 text11 CODE >531:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1E4 text11 CODE >532:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1E8 text11 CODE >534:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1E9 text11 CODE >537:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1EE text11 CODE >539:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-1F2 text11 CODE >540:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-3EB swtext1 CONST >296:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2F text10 CODE >290:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2F text10 CODE >294:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-35 text10 CODE >300:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-39 text10 CODE >301:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-3A text10 CODE >304:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-3C text10 CODE >305:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-3E text10 CODE >306:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-40 text10 CODE >307:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-42 text10 CODE >308:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-43 text10 CODE >311:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-45 text10 CODE >312:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-47 text10 CODE >313:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-49 text10 CODE >314:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-4B text10 CODE >315:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-4C text10 CODE >318:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-4E text10 CODE >319:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-50 text10 CODE >320:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-52 text10 CODE >321:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-54 text10 CODE >322:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-55 text10 CODE >325:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-57 text10 CODE >326:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-59 text10 CODE >327:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-5B text10 CODE >328:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-5D text10 CODE >329:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-5E text10 CODE >332:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-60 text10 CODE >333:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-62 text10 CODE >334:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-64 text10 CODE >335:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-66 text10 CODE >336:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-67 text10 CODE >339:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-69 text10 CODE >340:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-6B text10 CODE >341:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-6D text10 CODE >342:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-6F text10 CODE >343:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-70 text10 CODE >346:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-72 text10 CODE >347:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-74 text10 CODE >348:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-76 text10 CODE >349:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-78 text10 CODE >350:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-79 text10 CODE >353:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-7B text10 CODE >354:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-7D text10 CODE >355:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-7F text10 CODE >356:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-81 text10 CODE >357:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-82 text10 CODE >360:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-84 text10 CODE >361:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-86 text10 CODE >362:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-88 text10 CODE >363:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-8A text10 CODE >364:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-8B text10 CODE >367:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-8D text10 CODE >368:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-8F text10 CODE >369:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-91 text10 CODE >370:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-93 text10 CODE >371:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-94 text10 CODE >375:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-95 text10 CODE >377:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-96 text10 CODE >296:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-A0 text10 CODE >380:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-A4 text10 CODE >382:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-AC text10 CODE >384:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-B4 text10 CODE >386:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-CC text10 CODE >387:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-CE text10 CODE >391:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-D0 text10 CODE >395:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-D9 text10 CODE >397:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-E1 text10 CODE >399:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-F9 text10 CODE >400:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-FD text10 CODE >401:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-FE text10 CODE >404:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-102 text10 CODE >405:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-106 text10 CODE >407:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-107 text10 CODE >410:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-10C text10 CODE >412:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-110 text10 CODE >413:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-43F text9 CODE >77:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-43F text9 CODE >80:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-442 text9 CODE >82:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-443 text9 CODE >84:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-445 text9 CODE >85:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-46C text8 CODE >145:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-46C text8 CODE >146:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-471 text8 CODE >147:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-466 text7 CODE >175:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-466 text7 CODE >176:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-46B text7 CODE >177:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-36E text6 CODE >55:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-36E text6 CODE >60:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-370 text6 CODE >65:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-373 text6 CODE >70:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-376 text6 CODE >75:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-379 text6 CODE >76:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-37B text6 CODE >81:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-37D text6 CODE >86:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-37F text6 CODE >92:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-381 text6 CODE >93:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-382 text6 CODE >95:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-383 text6 CODE >96:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-384 text6 CODE >98:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-385 text6 CODE >99:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-386 text6 CODE >102:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-38B text6 CODE >103:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-390 text6 CODE >106:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-391 text6 CODE >108:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
-3C2 text5 CODE >65:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-3C2 text5 CODE >70:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-3C7 text5 CODE >73:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-3CA text5 CODE >76:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-3CE text5 CODE >79:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-3CF text5 CODE >82:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-3D0 text5 CODE >83:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-47D text4 CODE >87:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-47D text4 CODE >90:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-480 text4 CODE >91:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-478 text3 CODE >68:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-478 text3 CODE >71:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-479 text3 CODE >72:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-47A text3 CODE >73:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-47B text3 CODE >74:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-47C text3 CODE >75:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
-481 text2 CODE >199:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-481 text2 CODE >201:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-483 text2 CODE >202:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-460 text1 CODE >133:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-460 text1 CODE >134:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-465 text1 CODE >135:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
-2D9 maintext CODE >647:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2D9 maintext CODE >650:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2DA maintext CODE >652:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2DF maintext CODE >658:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2E0 maintext CODE >661:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2E1 maintext CODE >670:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2E3 maintext CODE >674:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2E4 maintext CODE >675:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2E5 maintext CODE >677:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2E7 maintext CODE >678:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2EC maintext CODE >680:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2F3 maintext CODE >682:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2F5 maintext CODE >678:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-2FD maintext CODE >685:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-310 maintext CODE >687:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-311 maintext CODE >689:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-31A maintext CODE >691:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-31F maintext CODE >693:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-327 maintext CODE >697:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-32B maintext CODE >700:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-32D maintext CODE >702:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-32E maintext CODE >705:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-337 maintext CODE >709:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-338 maintext CODE >672:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
-45A clrtext CODE >1985:C:\Users\bschmalz\AppData\Local\Temp\safc.
-45A clrtext CODE >1986:C:\Users\bschmalz\AppData\Local\Temp\safc.
-45B clrtext CODE >1987:C:\Users\bschmalz\AppData\Local\Temp\safc.
-45B clrtext CODE >1988:C:\Users\bschmalz\AppData\Local\Temp\safc.
-45C clrtext CODE >1989:C:\Users\bschmalz\AppData\Local\Temp\safc.
-45D clrtext CODE >1990:C:\Users\bschmalz\AppData\Local\Temp\safc.
-45E clrtext CODE >1991:C:\Users\bschmalz\AppData\Local\Temp\safc.
-45F clrtext CODE >1992:C:\Users\bschmalz\AppData\Local\Temp\safc.
-454 inittext CODE >1959:C:\Users\bschmalz\AppData\Local\Temp\safc.
-454 inittext CODE >1960:C:\Users\bschmalz\AppData\Local\Temp\safc.
-455 inittext CODE >1961:C:\Users\bschmalz\AppData\Local\Temp\safc.
-455 inittext CODE >1962:C:\Users\bschmalz\AppData\Local\Temp\safc.
-456 inittext CODE >1963:C:\Users\bschmalz\AppData\Local\Temp\safc.
-457 inittext CODE >1964:C:\Users\bschmalz\AppData\Local\Temp\safc.
-458 inittext CODE >1965:C:\Users\bschmalz\AppData\Local\Temp\safc.
-459 inittext CODE >1966:C:\Users\bschmalz\AppData\Local\Temp\safc.
+12 cinit CODE >1899:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+12 cinit CODE >1902:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+12 cinit CODE >149:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+13 cinit CODE >2000:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+14 cinit CODE >2002:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+15 cinit CODE >149:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+16 cinit CODE >2004:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+17 cinit CODE >2006:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+18 cinit CODE >149:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+19 cinit CODE >2008:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+1A cinit CODE >2010:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+1B cinit CODE >149:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1C cinit CODE >2012:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+1D cinit CODE >2014:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+1E cinit CODE >453:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1F cinit CODE >2016:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+20 cinit CODE >2018:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+21 cinit CODE >2020:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+22 cinit CODE >587:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+23 cinit CODE >2022:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+24 cinit CODE >2024:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+25 cinit CODE >2028:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+26 cinit CODE >2030:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+27 cinit CODE >161:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+28 cinit CODE >2032:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+29 cinit CODE >161:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2A cinit CODE >2034:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+2B cinit CODE >161:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2C cinit CODE >2036:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+2D cinit CODE >2038:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+2E cinit CODE >161:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2F cinit CODE >2040:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+30 cinit CODE >161:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+31 cinit CODE >2042:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+32 cinit CODE >161:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+33 cinit CODE >2044:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+34 cinit CODE >2068:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+35 cinit CODE >2061:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+36 cinit CODE >2062:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+37 cinit CODE >2063:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+38 cinit CODE >2064:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+39 cinit CODE >2069:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+3A cinit CODE >2070:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+3B cinit CODE >2071:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+3C cinit CODE >2072:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+3D cinit CODE >2073:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+3E cinit CODE >2079:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+3E cinit CODE >2081:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+3F cinit CODE >2082:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+40 cinit CODE >2083:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+4 intentry CODE >301:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+4 intentry CODE >51:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+6 intentry CODE >54:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+9 intentry CODE >56:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+A intentry CODE >57:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+B intentry CODE >58:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+E intentry CODE >60:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+F intentry CODE >66:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+58B text30 CODE >152:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+58B text30 CODE >155:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4F6 text29 CODE >130:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4F6 text29 CODE >135:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4FB text29 CODE >137:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+500 text29 CODE >139:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+502 text29 CODE >140:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+58A text28 CODE >182:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+58A text28 CODE >185:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4E9 text27 CODE >160:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4E9 text27 CODE >165:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4EE text27 CODE >167:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4F3 text27 CODE >169:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4F5 text27 CODE >170:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+53E text26 CODE >110:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+53E text26 CODE >113:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+541 text26 CODE >115:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+542 text26 CODE >119:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+544 text26 CODE >121:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+43F text25 CODE >221:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+43F text25 CODE >226:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+442 text25 CODE >227:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+444 text25 CODE >230:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+44D text25 CODE >233:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+450 text25 CODE >236:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+457 text25 CODE >237:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+45D text25 CODE >241:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+45D text25 CODE >242:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+45E text25 CODE >241:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+45F text25 CODE >242:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+462 text25 CODE >248:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+468 text25 CODE >251:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+469 text25 CODE >253:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+471 text25 CODE >255:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+47B text25 CODE >251:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+480 text25 CODE >259:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+481 text25 CODE >262:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+483 text25 CODE >264:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+484 text25 CODE >267:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+486 text25 CODE >269:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+487 text25 CODE >272:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+489 text25 CODE >274:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+48A text25 CODE >277:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+524 text24 CODE >123:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+524 text24 CODE >127:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+528 text24 CODE >129:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+52D text24 CODE >131:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+576 text23 CODE >108:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+576 text23 CODE >112:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+577 text23 CODE >114:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+57A text23 CODE >118:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+571 text21 CODE >298:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+571 text21 CODE >300:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+557 text20 CODE >286:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+557 text20 CODE >288:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+55C text20 CODE >289:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+56C text19 CODE >292:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+56C text19 CODE >294:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+551 text18 CODE >280:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+551 text18 CODE >282:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+556 text18 CODE >283:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+34C text17 CODE >743:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+34C text17 CODE >750:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+350 text17 CODE >752:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+352 text17 CODE >754:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+355 text17 CODE >756:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+357 text17 CODE >759:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+35B text17 CODE >761:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+35D text17 CODE >767:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+361 text17 CODE >769:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+364 text17 CODE >771:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+367 text17 CODE >774:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+36B text17 CODE >776:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+36D text17 CODE >777:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+36F text17 CODE >782:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+373 text17 CODE >784:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+375 text17 CODE >786:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+378 text17 CODE >788:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+37A text17 CODE >791:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+37E text17 CODE >793:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+380 text17 CODE >799:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+384 text17 CODE >801:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+387 text17 CODE >803:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+38A text17 CODE >806:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+38E text17 CODE >808:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+390 text17 CODE >809:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+392 text17 CODE >813:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+396 text17 CODE >815:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+399 text17 CODE >817:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+39B text17 CODE >819:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+39D text17 CODE >820:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+39E text17 CODE >823:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+39F text17 CODE >827:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3A3 text17 CODE >829:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3A6 text17 CODE >831:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3A8 text17 CODE >834:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3AC text17 CODE >836:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3C9 text17 CODE >840:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3CA text17 CODE >838:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3CB text17 CODE >840:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3CE text17 CODE >843:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3CF text17 CODE >844:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3D0 text17 CODE >845:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3D3 text17 CODE >861:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3D4 text17 CODE >864:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3DC text17 CODE >866:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3DE text17 CODE >867:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3DF text17 CODE >870:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3E0 text17 CODE >873:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3EC text17 CODE >874:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+567 text16 CODE >207:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+568 text16 CODE >209:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+56B text16 CODE >210:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+583 text15 CODE >202:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+584 text15 CODE >204:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+586 text15 CODE >205:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+52E swtext3 CONST >595:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+41 text14 CODE >585:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+41 text14 CODE >591:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+45 text14 CODE >593:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+49 text14 CODE >602:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+4B text14 CODE >603:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+4D text14 CODE >604:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+4F text14 CODE >605:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+51 text14 CODE >606:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+53 text14 CODE >607:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+55 text14 CODE >608:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+57 text14 CODE >609:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+59 text14 CODE >610:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+5A text14 CODE >613:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+5C text14 CODE >614:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+5E text14 CODE >615:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+60 text14 CODE >616:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+62 text14 CODE >617:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+64 text14 CODE >618:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+66 text14 CODE >619:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+68 text14 CODE >620:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+6A text14 CODE >621:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+6B text14 CODE >624:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+6D text14 CODE >625:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+6F text14 CODE >626:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+71 text14 CODE >627:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+73 text14 CODE >628:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+75 text14 CODE >629:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+77 text14 CODE >630:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+79 text14 CODE >631:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+7B text14 CODE >632:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+7C text14 CODE >635:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+7E text14 CODE >636:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+80 text14 CODE >637:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+82 text14 CODE >638:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+84 text14 CODE >639:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+86 text14 CODE >640:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+88 text14 CODE >641:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+8A text14 CODE >642:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+8C text14 CODE >643:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+8D text14 CODE >646:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+8F text14 CODE >647:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+91 text14 CODE >648:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+93 text14 CODE >649:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+95 text14 CODE >650:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+97 text14 CODE >651:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+99 text14 CODE >652:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+9B text14 CODE >653:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+9D text14 CODE >654:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+9E text14 CODE >657:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+A0 text14 CODE >658:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+A2 text14 CODE >659:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+A4 text14 CODE >660:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+A6 text14 CODE >661:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+A8 text14 CODE >662:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+AA text14 CODE >663:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+AC text14 CODE >664:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+AE text14 CODE >665:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+AF text14 CODE >668:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+B1 text14 CODE >669:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+B3 text14 CODE >670:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+B5 text14 CODE >671:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+B7 text14 CODE >672:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+B9 text14 CODE >673:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+BB text14 CODE >674:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+BD text14 CODE >675:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+BF text14 CODE >676:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+C0 text14 CODE >679:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+C2 text14 CODE >680:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+C4 text14 CODE >681:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+C6 text14 CODE >682:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+C8 text14 CODE >683:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+CA text14 CODE >684:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+CC text14 CODE >685:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+CE text14 CODE >686:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+D0 text14 CODE >687:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+D1 text14 CODE >595:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+DB text14 CODE >694:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+EB text14 CODE >696:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+108 text14 CODE >700:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+109 text14 CODE >698:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+10A text14 CODE >700:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+10D text14 CODE >704:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+10E text14 CODE >702:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+10F text14 CODE >704:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+110 text14 CODE >705:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+11C text14 CODE >706:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+11E text14 CODE >707:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+12A text14 CODE >708:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+12C text14 CODE >709:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+138 text14 CODE >710:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+13A text14 CODE >711:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+146 text14 CODE >712:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+148 text14 CODE >713:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+154 text14 CODE >714:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+156 text14 CODE >715:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+162 text14 CODE >716:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+164 text14 CODE >717:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+170 text14 CODE >718:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+172 text14 CODE >719:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+17E text14 CODE >720:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+180 text14 CODE >721:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+18C text14 CODE >722:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+18E text14 CODE >723:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+19A text14 CODE >726:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1A3 text14 CODE >730:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1B3 text14 CODE >732:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1BF text14 CODE >733:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1C1 text14 CODE >735:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+48B text13 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+48B text13 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+48D text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+491 text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+492 text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+492 text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+493 text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+495 text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+497 text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+498 text13 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+49A text13 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+4A2 text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+4A6 text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+4A7 text13 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+4A9 text13 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+4AB text13 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+4AF text13 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+4D4 text12 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4D4 text12 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4D6 text12 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4D8 text12 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4DC text12 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4DE text12 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4E0 text12 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4E4 text12 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4E8 text12 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+519 swtext2 CONST >457:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1C3 text11 CODE >451:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1C3 text11 CODE >455:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1C8 text11 CODE >461:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1CB text11 CODE >462:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1CC text11 CODE >465:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1CE text11 CODE >466:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1D0 text11 CODE >467:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1D2 text11 CODE >468:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1D4 text11 CODE >469:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1D5 text11 CODE >472:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1D7 text11 CODE >473:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1D9 text11 CODE >474:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1DB text11 CODE >475:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1DD text11 CODE >476:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1DE text11 CODE >479:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1E0 text11 CODE >480:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1E2 text11 CODE >481:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1E4 text11 CODE >482:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1E6 text11 CODE >483:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1E7 text11 CODE >486:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1E9 text11 CODE >487:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1EB text11 CODE >488:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1ED text11 CODE >489:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1EF text11 CODE >490:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1F0 text11 CODE >493:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1F2 text11 CODE >494:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1F4 text11 CODE >495:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1F6 text11 CODE >496:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1F8 text11 CODE >497:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1F9 text11 CODE >500:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1FB text11 CODE >501:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1FD text11 CODE >502:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+1FF text11 CODE >503:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+201 text11 CODE >504:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+202 text11 CODE >507:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+204 text11 CODE >508:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+206 text11 CODE >509:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+208 text11 CODE >510:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+20A text11 CODE >511:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+20B text11 CODE >514:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+20D text11 CODE >515:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+20F text11 CODE >516:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+211 text11 CODE >517:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+213 text11 CODE >518:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+214 text11 CODE >521:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+216 text11 CODE >522:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+218 text11 CODE >523:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+21A text11 CODE >524:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+21C text11 CODE >525:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+21D text11 CODE >528:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+21F text11 CODE >529:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+221 text11 CODE >530:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+223 text11 CODE >531:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+225 text11 CODE >532:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+226 text11 CODE >533:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+227 text11 CODE >457:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+231 text11 CODE >541:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+234 text11 CODE >543:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+238 text11 CODE >545:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+23C text11 CODE >547:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+243 text11 CODE >549:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+24E text11 CODE >550:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+250 text11 CODE >554:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+252 text11 CODE >560:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+254 text11 CODE >563:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+25C text11 CODE >565:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+264 text11 CODE >567:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+26E text11 CODE >568:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+270 text11 CODE >569:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+271 text11 CODE >572:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+273 text11 CODE >573:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+277 text11 CODE >578:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+278 text11 CODE >580:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+27C text11 CODE >583:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+50E swtext1 CONST >309:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+28A text10 CODE >303:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+28A text10 CODE >307:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+28F text10 CODE >313:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+292 text10 CODE >314:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+293 text10 CODE >317:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+295 text10 CODE >318:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+297 text10 CODE >319:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+299 text10 CODE >320:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+29B text10 CODE >321:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+29C text10 CODE >324:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+29E text10 CODE >325:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2A0 text10 CODE >326:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2A2 text10 CODE >327:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2A4 text10 CODE >328:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2A5 text10 CODE >331:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2A7 text10 CODE >332:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2A9 text10 CODE >333:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2AB text10 CODE >334:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2AD text10 CODE >335:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2AE text10 CODE >338:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2B0 text10 CODE >339:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2B2 text10 CODE >340:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2B4 text10 CODE >341:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2B6 text10 CODE >342:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2B7 text10 CODE >345:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2B9 text10 CODE >346:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2BB text10 CODE >347:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2BD text10 CODE >348:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2BF text10 CODE >349:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2C0 text10 CODE >352:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2C2 text10 CODE >353:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2C4 text10 CODE >354:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2C6 text10 CODE >355:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2C8 text10 CODE >356:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2C9 text10 CODE >359:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2CB text10 CODE >360:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2CD text10 CODE >361:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2CF text10 CODE >362:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2D1 text10 CODE >363:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2D2 text10 CODE >366:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2D4 text10 CODE >367:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2D6 text10 CODE >368:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2D8 text10 CODE >369:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2DA text10 CODE >370:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2DB text10 CODE >373:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2DD text10 CODE >374:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2DF text10 CODE >375:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2E1 text10 CODE >376:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2E3 text10 CODE >377:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2E4 text10 CODE >380:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2E6 text10 CODE >381:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2E8 text10 CODE >382:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2EA text10 CODE >383:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2EC text10 CODE >388:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2ED text10 CODE >389:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2EE text10 CODE >309:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2F8 text10 CODE >393:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2FB text10 CODE >396:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+2FF text10 CODE >399:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+303 text10 CODE >402:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+30A text10 CODE >406:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+315 text10 CODE >407:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+317 text10 CODE >413:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+319 text10 CODE >420:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+31B text10 CODE >424:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+323 text10 CODE >427:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+32B text10 CODE >430:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+335 text10 CODE >431:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+337 text10 CODE >432:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+338 text10 CODE >437:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+33A text10 CODE >438:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+33E text10 CODE >444:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+33F text10 CODE >446:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+343 text10 CODE >449:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+537 text9 CODE >77:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+537 text9 CODE >80:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+53A text9 CODE >82:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+53B text9 CODE >84:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+53D text9 CODE >85:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+54B text8 CODE >145:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+54B text8 CODE >146:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+550 text8 CODE >147:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+562 text7 CODE >175:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+562 text7 CODE >176:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+566 text7 CODE >177:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4B0 text6 CODE >55:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4B0 text6 CODE >60:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4B2 text6 CODE >65:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4B5 text6 CODE >70:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4B8 text6 CODE >75:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4BB text6 CODE >76:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4BD text6 CODE >81:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4BF text6 CODE >86:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4C1 text6 CODE >92:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4C3 text6 CODE >93:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4C4 text6 CODE >95:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4C5 text6 CODE >96:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4C6 text6 CODE >98:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4C7 text6 CODE >99:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4C8 text6 CODE >102:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4CD text6 CODE >103:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4D2 text6 CODE >106:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+4D3 text6 CODE >108:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+503 text5 CODE >65:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+503 text5 CODE >70:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+507 text5 CODE >73:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+50A text5 CODE >76:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+50B text5 CODE >79:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+50C text5 CODE >82:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+50D text5 CODE >83:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+57F text4 CODE >87:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+57F text4 CODE >90:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+582 text4 CODE >91:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+57B text3 CODE >68:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+57B text3 CODE >71:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+57C text3 CODE >72:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+57D text3 CODE >73:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+57E text3 CODE >74:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+587 text2 CODE >212:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+587 text2 CODE >214:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+589 text2 CODE >215:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+55D text1 CODE >133:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+55D text1 CODE >134:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+561 text1 CODE >135:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+3ED maintext CODE >879:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3ED maintext CODE >882:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3EE maintext CODE >884:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3F3 maintext CODE >890:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3F4 maintext CODE >893:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3F5 maintext CODE >906:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3F6 maintext CODE >907:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3F7 maintext CODE >908:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3F8 maintext CODE >910:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3FA maintext CODE >911:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+3FB maintext CODE >913:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+402 maintext CODE >915:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+404 maintext CODE >911:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+409 maintext CODE >918:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+41D maintext CODE >920:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+41E maintext CODE >922:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+427 maintext CODE >924:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+42A maintext CODE >926:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+432 maintext CODE >930:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+435 maintext CODE >933:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+437 maintext CODE >935:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+438 maintext CODE >938:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+43D maintext CODE >942:C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+545 clrtext CODE >2050:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+545 clrtext CODE >2051:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+546 clrtext CODE >2052:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+546 clrtext CODE >2053:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+547 clrtext CODE >2054:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+548 clrtext CODE >2055:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+549 clrtext CODE >2056:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
+54A clrtext CODE >2057:C:\Users\BRIANS~1\AppData\Local\Temp\sghs.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -550,102 +682,119 @@ FE text10 CODE >404:C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\Learn
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_IOCAF3_DefaultInterruptHandler 908 0 CODE 0 text27 dist/default/production\LearnToSolder2018.X.production.obj
+_IOCAF3_DefaultInterruptHandler B14 0 CODE 0 text28 dist/default/production\LearnToSolder2018.X.production.obj
 ___latbits 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __LdataBANK0 0 0 ABS 0 dataBANK0 -
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
 __Hspace_0 8009 0 ABS 0 - -
-__Hspace_1 7A 0 ABS 0 - -
+__Hspace_1 AA 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
+_LastRightButtonPressTime 44 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
 __size_of_RightButtonPressed 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-CheckForButtonPushes@LastRightButtonState 3C 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+CheckForButtonPushes@LastRightButtonState 4D 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_RightButtonPressedRaw 89A 0 CODE 0 text17 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_PIN_MANAGER_IOC 83E 0 CODE 0 text25 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_WDT_Initialize 902 0 CODE 0 text4 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_RightButtonPressedRaw AAE 0 CODE 0 text18 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_PIN_MANAGER_IOC A8A 0 CODE 0 text26 dist/default/production\LearnToSolder2018.X.production.obj
+PL2 4FA 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
+PL4 688 0 CODE 0 text10 dist/default/production\LearnToSolder2018.X.production.obj
+PL6 50A 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_WDT_Initialize B06 0 CODE 0 text4 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_SetAllLEDsOff 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-main@i 64 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+main@i A9 0 BANK1 1 cstackBANK1 dist/default/production\LearnToSolder2018.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
 _LATA 10C 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _TMR0 15 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _WPUA 20C 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-_main 5B2 0 CODE 0 maintext dist/default/production\LearnToSolder2018.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+_main 7DA 0 CODE 0 maintext dist/default/production\LearnToSolder2018.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-start 2E 0 CODE 0 init C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-_TMR0_InterruptHandler 65 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+start 22 0 CODE 0 init C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+_TMR0_InterruptHandler 69 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__end_of_TMR0_SetInterruptHandler 8CC 0 CODE 0 text1 dist/default/production\LearnToSolder2018.X.production.obj
-?___wmul 55 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-_RightDebounceTimer 78 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_TMR0_SetInterruptHandler AC4 0 CODE 0 text1 dist/default/production\LearnToSolder2018.X.production.obj
+?___wmul 73 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+_RightDebounceTimer 79 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_RightButtonPressedRaw 88C 0 CODE 0 text17 dist/default/production\LearnToSolder2018.X.production.obj
+_RightButtonPressedRaw AA2 0 CODE 0 text18 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_SetLEDOn 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_LeftButtonPressed 87E 0 CODE 0 text20 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_LeftButtonPressed AEC 0 CODE 0 text21 dist/default/production\LearnToSolder2018.X.production.obj
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
-__end_of_IOCAF2_DefaultInterruptHandler 90C 0 CODE 0 text29 dist/default/production\LearnToSolder2018.X.production.obj
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+__end_of_IOCAF2_DefaultInterruptHandler B18 0 CODE 0 text30 dist/default/production\LearnToSolder2018.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
-SetLEDOn@LED 75 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+SetLEDOn@LED 73 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-TMR0_SetInterruptHandler@InterruptHandler 74 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_SetAllLEDsOff 908 0 CODE 0 text2 dist/default/production\LearnToSolder2018.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-intlevel1 0 0 CODE 0 functab C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-intlevel2 0 0 CODE 0 functab C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-intlevel3 0 0 CODE 0 functab C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-intlevel4 0 0 CODE 0 functab C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-intlevel5 0 0 CODE 0 functab C:\Users\bschmalz\AppData\Local\Temp\safc.obj
+TMR0_SetInterruptHandler@InterruptHandler 73 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_SetAllLEDsOff B14 0 CODE 0 text2 dist/default/production\LearnToSolder2018.X.production.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-__Hfunctab 0 0 CODE 0 functab -
-_PIN_MANAGER_IOC 82C 0 CODE 0 text25 dist/default/production\LearnToSolder2018.X.production.obj
+__Hfunctab 0 0 ENTRY 0 functab -
+_PIN_MANAGER_IOC A7C 0 CODE 0 text26 dist/default/production\LearnToSolder2018.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __size_of_IOCAF2_SetInterruptHandler 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-___wmul@multiplicand 57 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+RunGame@num_leds_lit 5E 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+___wmul@multiplicand 75 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
 _ANSELA 18C 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _APFCON 11D 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _BORCON 116 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-IOCAF3_SetInterruptHandler@InterruptHandler 74 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_INTERRUPT_InterruptManager 2E 0 CODE 0 intentry dist/default/production\LearnToSolder2018.X.production.obj
-__end_of___wmul 75C 0 CODE 0 text12 dist/default/production\LearnToSolder2018.X.production.obj
-_SetLEDOn 83E 0 CODE 0 text14 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_SetLEDOff 85E 0 CODE 0 text15 dist/default/production\LearnToSolder2018.X.production.obj
+IOCAF3_SetInterruptHandler@InterruptHandler 73 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_INTERRUPT_InterruptManager 22 0 CODE 0 intentry dist/default/production\LearnToSolder2018.X.production.obj
+__Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
+__end_of___wmul 9D2 0 CODE 0 text12 dist/default/production\LearnToSolder2018.X.production.obj
+_SetLEDOn B06 0 CODE 0 text15 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_SetLEDOff AD8 0 CODE 0 text16 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_CheckForButtonPushes 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_IOCAF3_SetInterruptHandler 8D8 0 CODE 0 text7 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_IOCAF3_SetInterruptHandler ACE 0 CODE 0 text7 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_SetLEDOff 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 __LnvBANK0 0 0 ABS 0 nvBANK0 -
-__end_of_SetLEDOn 84E 0 CODE 0 text14 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of___lwdiv 6DC 0 CODE 0 text13 dist/default/production\LearnToSolder2018.X.production.obj
-RunRightFlash@right_delay 53 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_CheckForButtonPushes 4EC 0 CODE 0 text16 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_SetLEDOn B0E 0 CODE 0 text15 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of___lwdiv 960 0 CODE 0 text13 dist/default/production\LearnToSolder2018.X.production.obj
+RunRightFlash@right_delay 5C 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_CheckForButtonPushes 7DA 0 CODE 0 text17 dist/default/production\LearnToSolder2018.X.production.obj
 _OPTION_REG 95 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_SetLEDOff 84E 0 CODE 0 text15 dist/default/production\LearnToSolder2018.X.production.obj
-_LeftButtonPressed 86E 0 CODE 0 text20 dist/default/production\LearnToSolder2018.X.production.obj
-_IOCAF2_SetInterruptHandler 8D8 0 CODE 0 text8 dist/default/production\LearnToSolder2018.X.production.obj
-___lwdiv@quotient 5E 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-_LEDOns 3F 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_SetLEDOff ACE 0 CODE 0 text16 dist/default/production\LearnToSolder2018.X.production.obj
+_LeftButtonPressed AE2 0 CODE 0 text21 dist/default/production\LearnToSolder2018.X.production.obj
+__Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
+_IOCAF2_SetInterruptHandler A96 0 CODE 0 text8 dist/default/production\LearnToSolder2018.X.production.obj
+___lwdiv@quotient 66 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_LEDOns 50 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_PIN_MANAGER_Initialize 6DC 0 CODE 0 text6 dist/default/production\LearnToSolder2018.X.production.obj
-start_initialization 30 0 CODE 0 cinit dist/default/production\LearnToSolder2018.X.production.obj
+_PIN_MANAGER_Initialize 960 0 CODE 0 text6 dist/default/production\LearnToSolder2018.X.production.obj
+start_initialization 24 0 CODE 0 cinit dist/default/production\LearnToSolder2018.X.production.obj
 _ODCONA 28C 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_IOCAF2_DefaultInterruptHandler 90A 0 CODE 0 text29 dist/default/production\LearnToSolder2018.X.production.obj
-_TRISTable 49 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_IOCAF2_DefaultInterruptHandler B16 0 CODE 0 text30 dist/default/production\LearnToSolder2018.X.production.obj
+_TRISTable 52 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_PIN_MANAGER_IOC 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 TMR0_Callback@i 72 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_SYSTEM_Initialize 8FA 0 CODE 0 text3 dist/default/production\LearnToSolder2018.X.production.obj
-_LeftButtonPressedRaw 89A 0 CODE 0 text19 dist/default/production\LearnToSolder2018.X.production.obj
-clear_ram0 8B4 0 CODE 0 clrtext dist/default/production\LearnToSolder2018.X.production.obj
-__pcstackBANK0 55 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-_IOCAF3_InterruptHandler 67 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__end_ofPL2 50A 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
+__end_ofPL4 698 0 CODE 0 text10 dist/default/production\LearnToSolder2018.X.production.obj
+__end_ofPL6 514 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_SYSTEM_Initialize AFE 0 CODE 0 text3 dist/default/production\LearnToSolder2018.X.production.obj
+_LeftButtonPressedRaw AAE 0 CODE 0 text20 dist/default/production\LearnToSolder2018.X.production.obj
+clear_ram0 A8A 0 CODE 0 clrtext dist/default/production\LearnToSolder2018.X.production.obj
+__pcstackBANK0 5F 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__pcstackBANK1 A8 0 BANK1 1 cstackBANK1 dist/default/production\LearnToSolder2018.X.production.obj
+__size_of_RunGame 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
+_LastLeftButtonPressTime 40 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_IOCAF3_InterruptHandler 6B 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+RunGame@next_decrement_time 38 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 _WDTCON 97 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_LeftButtonState 77 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\bschmalz\AppData\Local\Temp\safc.obj
+_LeftButtonState 78 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -656,7 +805,7 @@ __Hbank6 0 0 BANK6 1 bank6 -
 __Hbank7 0 0 BANK7 1 bank7 -
 __Hbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
-__Hcinit 5E 0 CODE 0 cinit -
+__Hcinit 82 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __Hsfr10 0 0 ABS 0 sfr10 -
@@ -682,8 +831,8 @@ __Hsfr29 0 0 ABS 0 sfr29 -
 __Hsfr30 0 0 ABS 0 sfr30 -
 __Hsfr31 0 0 ABS 0 sfr31 -
 __Hstack 0 0 STACK 2 stack -
-___lwdiv@counter 60 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-main@APatternIsRunning 63 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+___lwdiv@counter 65 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+main@APatternIsRunning A8 0 BANK1 1 cstackBANK1 dist/default/production\LearnToSolder2018.X.production.obj
 _VREGCONbits 197 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __Hbank10 0 0 BANK10 1 bank10 -
 __Hbank11 0 0 BANK11 1 bank11 -
@@ -712,7 +861,7 @@ __Hmaintext 0 0 ABS 0 maintext -
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10012 0 CONFIG 0 config -
-_IOCAF2_InterruptHandler 69 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_IOCAF2_InterruptHandler 6D 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -723,7 +872,7 @@ __Lbank6 0 0 BANK6 1 bank6 -
 __Lbank7 0 0 BANK7 1 bank7 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__Lcinit 30 0 CODE 0 cinit -
+__Lcinit 24 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
@@ -748,14 +897,12 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-init_ram 8A8 0 CODE 0 inittext dist/default/production\LearnToSolder2018.X.production.obj
-__Linittext 0 0 ABS 0 inittext -
 _PORTAbits C 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _INTCONbits B 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_PORTTable 41 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_PORTTable A0 0 BANK1 1 dataBANK1 dist/default/production\LearnToSolder2018.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 2E 0 CODE 0 init -
+__Hinit 22 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -769,7 +916,7 @@ __Hsfr9 0 0 ABS 0 sfr9 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 2E 0 CODE 0 init -
+__Linit 22 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
@@ -781,64 +928,68 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-RunLeftFlash@left_delay 51 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-__pnvBANK0 65 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-___wmul 724 0 CODE 0 text12 dist/default/production\LearnToSolder2018.X.production.obj
+RunLeftFlash@left_delay 5A 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__pnvBANK0 69 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+___wmul 9A8 0 CODE 0 text12 dist/default/production\LearnToSolder2018.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 int$flags 7E 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __S0 8009 0 ABS 0 - -
-__S1 7A 0 ABS 0 - -
+__S1 AA 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __size_of_TMR0_ISR 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_IOCAF3_SetInterruptHandler 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_RightButtonPressedRaw 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_TMR0_CallBack 816 0 CODE 0 text23 dist/default/production\LearnToSolder2018.X.production.obj
-_TMR0_Callback 4EC 0 CODE 0 text24 dist/default/production\LearnToSolder2018.X.production.obj
-_SYSTEM_Initialize 8F0 0 CODE 0 text3 dist/default/production\LearnToSolder2018.X.production.obj
-_IOCAF2_ISR 7BC 0 CODE 0 text28 dist/default/production\LearnToSolder2018.X.production.obj
-_IOCAF3_ISR 7A2 0 CODE 0 text26 dist/default/production\LearnToSolder2018.X.production.obj
+_TMR0_CallBack A48 0 CODE 0 text24 dist/default/production\LearnToSolder2018.X.production.obj
+_TMR0_Callback 87E 0 CODE 0 text25 dist/default/production\LearnToSolder2018.X.production.obj
+_SYSTEM_Initialize AF6 0 CODE 0 text3 dist/default/production\LearnToSolder2018.X.production.obj
+_IOCAF2_ISR 9EC 0 CODE 0 text29 dist/default/production\LearnToSolder2018.X.production.obj
+_IOCAF3_ISR 9D2 0 CODE 0 text27 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_RunGame 386 0 CODE 0 text14 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_IOCAF3_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-__pdataBANK0 41 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_RightButtonPressed 86E 0 CODE 0 text18 dist/default/production\LearnToSolder2018.X.production.obj
-_RightButtonState 76 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+__pdataBANK0 52 0 BANK0 1 dataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__pdataBANK1 A0 0 BANK1 1 dataBANK1 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_RightButtonPressed AE2 0 CODE 0 text19 dist/default/production\LearnToSolder2018.X.production.obj
+_RightButtonState 77 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-IOCAF2_SetInterruptHandler@InterruptHandler 74 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+IOCAF2_SetInterruptHandler@InterruptHandler 73 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
 _INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/production\LearnToSolder2018.X.production.obj
 _IOCAFbits 393 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _IOCANbits 392 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _IOCAPbits 391 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_IOCAF3_SetInterruptHandler 8CC 0 CODE 0 text7 dist/default/production\LearnToSolder2018.X.production.obj
-_TMR0_ISR 8E4 0 CODE 0 text22 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext10 5E 0 CODE 0 text10 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext11 222 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext12 724 0 CODE 0 text12 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext13 672 0 CODE 0 text13 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext14 83E 0 CODE 0 text14 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext15 84E 0 CODE 0 text15 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext16 3E6 0 CODE 0 text16 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext17 88C 0 CODE 0 text17 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext18 85E 0 CODE 0 text18 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext19 89A 0 CODE 0 text19 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext20 86E 0 CODE 0 text20 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext22 8E4 0 CODE 0 text22 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext23 816 0 CODE 0 text23 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext24 4EC 0 CODE 0 text24 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext25 82C 0 CODE 0 text25 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext26 7A2 0 CODE 0 text26 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext27 908 0 CODE 0 text27 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext28 7BC 0 CODE 0 text28 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext29 90A 0 CODE 0 text29 dist/default/production\LearnToSolder2018.X.production.obj
-_RunRightFlash 5E 0 CODE 0 text10 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_PIN_MANAGER_Initialize 724 0 CODE 0 text6 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_TMR0_Initialize 7A2 0 CODE 0 text5 dist/default/production\LearnToSolder2018.X.production.obj
-___lwdiv 672 0 CODE 0 text13 dist/default/production\LearnToSolder2018.X.production.obj
+_IOCAF3_SetInterruptHandler AC4 0 CODE 0 text7 dist/default/production\LearnToSolder2018.X.production.obj
+_TMR0_ISR AEC 0 CODE 0 text23 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext10 514 0 CODE 0 text10 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext11 386 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext12 9A8 0 CODE 0 text12 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext13 916 0 CODE 0 text13 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext14 82 0 CODE 0 text14 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext15 B06 0 CODE 0 text15 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext16 ACE 0 CODE 0 text16 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext17 698 0 CODE 0 text17 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext18 AA2 0 CODE 0 text18 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext19 AD8 0 CODE 0 text19 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext20 AAE 0 CODE 0 text20 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext21 AE2 0 CODE 0 text21 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext23 AEC 0 CODE 0 text23 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext24 A48 0 CODE 0 text24 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext25 87E 0 CODE 0 text25 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext26 A7C 0 CODE 0 text26 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext27 9D2 0 CODE 0 text27 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext28 B14 0 CODE 0 text28 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext29 9EC 0 CODE 0 text29 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext30 B16 0 CODE 0 text30 dist/default/production\LearnToSolder2018.X.production.obj
+_RunRightFlash 514 0 CODE 0 text10 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_PIN_MANAGER_Initialize 9A8 0 CODE 0 text6 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_TMR0_Initialize A1C 0 CODE 0 text5 dist/default/production\LearnToSolder2018.X.production.obj
+___lwdiv 916 0 CODE 0 text13 dist/default/production\LearnToSolder2018.X.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -861,62 +1012,63 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 5B2 0 CODE 0 maintext dist/default/production\LearnToSolder2018.X.production.obj
+__pmaintext 7DA 0 CODE 0 maintext dist/default/production\LearnToSolder2018.X.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_TMR0_ISR 8F0 0 CODE 0 text22 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_TMR0_ISR AF6 0 CODE 0 text23 dist/default/production\LearnToSolder2018.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-__Hinittext 0 0 ABS 0 inittext -
-___wmul@multiplier 55 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-CheckForButtonPushes@LastLeftButtonState 3D 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-___lwdiv@divisor 59 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-_RightButtonPressed 85E 0 CODE 0 text18 dist/default/production\LearnToSolder2018.X.production.obj
-_TMR0_SetInterruptHandler 8C0 0 CODE 0 text1 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_IOCAF2_ISR 7D6 0 CODE 0 text28 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_IOCAF3_ISR 7BC 0 CODE 0 text26 dist/default/production\LearnToSolder2018.X.production.obj
-stackhi 20EF 0 ABS 0 - C:\Users\bschmalz\AppData\Local\Temp\safc.obj
-stacklo 204C 0 ABS 0 - C:\Users\bschmalz\AppData\Local\Temp\safc.obj
+___wmul@multiplier 73 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+CheckForButtonPushes@LastLeftButtonState 4E 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+___lwdiv@divisor 61 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_RightButtonPressed AD8 0 CODE 0 text19 dist/default/production\LearnToSolder2018.X.production.obj
+_TMR0_SetInterruptHandler ABA 0 CODE 0 text1 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_IOCAF2_ISR A06 0 CODE 0 text29 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_IOCAF3_ISR 9EC 0 CODE 0 text27 dist/default/production\LearnToSolder2018.X.production.obj
+stackhi 20EF 0 ABS 0 - C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
+stacklo 205A 0 ABS 0 - C:\Users\BRIANS~1\AppData\Local\Temp\sghs.obj
 _OSCTUNE 98 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_CheckForButtonPushes 3E6 0 CODE 0 text16 dist/default/production\LearnToSolder2018.X.production.obj
-_LEDState 40 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_CheckForButtonPushes 698 0 CODE 0 text17 dist/default/production\LearnToSolder2018.X.production.obj
+_LEDState 51 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+__pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
 __CFG_LPBOREN$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_LeftDebounceTimer 79 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+_LeftDebounceTimer 7A 0 COMMON 1 bssCOMMON dist/default/production\LearnToSolder2018.X.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__Lend_init 2E 0 CODE 0 end_init -
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__Lend_init 22 0 CODE 0 end_init -
+CheckForButtonPushes@LeftButtonQuickPressCount 4C 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_TMR0_CallBack 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_TMR0_Callback 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization 58 0 CODE 0 cinit dist/default/production\LearnToSolder2018.X.production.obj
-_TMR0_Initialize 784 0 CODE 0 text5 dist/default/production\LearnToSolder2018.X.production.obj
-__Hintentry 2E 0 CODE 0 intentry -
+end_of_initialization 7C 0 CODE 0 cinit dist/default/production\LearnToSolder2018.X.production.obj
+_TMR0_Initialize A06 0 CODE 0 text5 dist/default/production\LearnToSolder2018.X.production.obj
+__Hintentry 22 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
-___lwdiv@dividend 5B 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-?___lwdiv 59 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+___lwdiv@dividend 63 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+?___lwdiv 61 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 8C0 0 CODE 0 text1 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext2 902 0 CODE 0 text2 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext3 8F0 0 CODE 0 text3 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext4 8FA 0 CODE 0 text4 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext5 784 0 CODE 0 text5 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext6 6DC 0 CODE 0 text6 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext7 8CC 0 CODE 0 text7 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext8 8D8 0 CODE 0 text8 dist/default/production\LearnToSolder2018.X.production.obj
-__ptext9 87E 0 CODE 0 text9 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_IOCAF3_DefaultInterruptHandler 90A 0 CODE 0 text27 dist/default/production\LearnToSolder2018.X.production.obj
-_RunLeftFlash 222 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_TMR0_CallBack 82C 0 CODE 0 text23 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_TMR0_Callback 5B2 0 CODE 0 text24 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext1 ABA 0 CODE 0 text1 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext2 B0E 0 CODE 0 text2 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext3 AF6 0 CODE 0 text3 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext4 AFE 0 CODE 0 text4 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext5 A06 0 CODE 0 text5 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext6 960 0 CODE 0 text6 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext7 AC4 0 CODE 0 text7 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext8 A96 0 CODE 0 text8 dist/default/production\LearnToSolder2018.X.production.obj
+__ptext9 A6E 0 CODE 0 text9 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_IOCAF3_DefaultInterruptHandler B16 0 CODE 0 text28 dist/default/production\LearnToSolder2018.X.production.obj
+_RunLeftFlash 386 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_TMR0_CallBack A5C 0 CODE 0 text24 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_TMR0_Callback 916 0 CODE 0 text25 dist/default/production\LearnToSolder2018.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __size_of_RunRightFlash 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
@@ -924,12 +1076,13 @@ __Lreset_vec 0 0 CODE 0 reset_vec -
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _PatternDelay 20 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 _PatternState 30 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of__initialization 58 0 CODE 0 cinit dist/default/production\LearnToSolder2018.X.production.obj
-__Lfunctab 0 0 CODE 0 functab -
-_timer0ReloadVal 6B 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-_SetAllLEDsOff 902 0 CODE 0 text2 dist/default/production\LearnToSolder2018.X.production.obj
-__pidataBANK0 75C 0 CODE 0 idataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
-_ShutdownDelayTimer 3E 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of__initialization 7C 0 CODE 0 cinit dist/default/production\LearnToSolder2018.X.production.obj
+__Lfunctab 0 0 ENTRY 0 functab -
+_timer0ReloadVal 6F 0 BANK0 1 nvBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_SetAllLEDsOff B0E 0 CODE 0 text2 dist/default/production\LearnToSolder2018.X.production.obj
+__pidataBANK0 0 0 CODE 0 idataBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__pidataBANK1 0 0 CODE 0 idataBANK1 dist/default/production\LearnToSolder2018.X.production.obj
+_ShutdownDelayTimer 4F 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext -
 __CFG_PLLEN$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_LeftButtonPressed 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
@@ -937,36 +1090,40 @@ __size_of_LeftButtonPressedRaw 0 0 ABS 0 - dist/default/production\LearnToSolder
 __size_of_IOCAF2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_RunLeftFlash 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_RunRightFlash 222 0 CODE 0 text10 dist/default/production\LearnToSolder2018.X.production.obj
-__Hend_init 30 0 CODE 0 end_init -
+__end_of_RunRightFlash 688 0 CODE 0 text10 dist/default/production\LearnToSolder2018.X.production.obj
+__Hend_init 24 0 CODE 0 end_init -
 __size_of_TMR0_SetInterruptHandler 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_main 672 0 CODE 0 maintext dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_IOCAF2_SetInterruptHandler 8E4 0 CODE 0 text8 dist/default/production\LearnToSolder2018.X.production.obj
+RunGame@last_button_press_time 3C 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_main 87E 0 CODE 0 maintext dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_IOCAF2_SetInterruptHandler AA2 0 CODE 0 text8 dist/default/production\LearnToSolder2018.X.production.obj
+_RunGame 82 0 CODE 0 text14 dist/default/production\LearnToSolder2018.X.production.obj
 _PORTA C 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_TMR0_Initialize 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__end_of_LeftButtonPressedRaw 8A8 0 CODE 0 text19 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_LeftButtonPressedRaw ABA 0 CODE 0 text20 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_WDT_Initialize 8FA 0 CODE 0 text4 dist/default/production\LearnToSolder2018.X.production.obj
-_WakeTimer 38 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+_WDT_Initialize AFE 0 CODE 0 text4 dist/default/production\LearnToSolder2018.X.production.obj
+_WakeTimer 48 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\LearnToSolder2018.X.production.obj
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
-__end_of_OSCILLATOR_Initialize 88C 0 CODE 0 text9 dist/default/production\LearnToSolder2018.X.production.obj
-__end_of_RunLeftFlash 3E6 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
-__initialization 30 0 CODE 0 cinit dist/default/production\LearnToSolder2018.X.production.obj
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__end_of_OSCILLATOR_Initialize A7C 0 CODE 0 text9 dist/default/production\LearnToSolder2018.X.production.obj
+__end_of_RunLeftFlash 4FA 0 CODE 0 text11 dist/default/production\LearnToSolder2018.X.production.obj
+__initialization 24 0 CODE 0 cinit dist/default/production\LearnToSolder2018.X.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-SetLEDOff@LED 75 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
-___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+SetLEDOff@LED 73 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
+___wmul@product 5F 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_IOCAF2_ISR 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
 __size_of_IOCAF3_ISR 0 0 ABS 0 - dist/default/production\LearnToSolder2018.X.production.obj
-_CheckForButtonPushes$429 75 0 COMMON 1 cstackCOMMON dist/default/production\LearnToSolder2018.X.production.obj
-__pswtext1 7D6 0 CONST 0 swtext1 dist/default/production\LearnToSolder2018.X.production.obj
-__pswtext2 800 0 CONST 0 swtext2 dist/default/production\LearnToSolder2018.X.production.obj
-_OSCILLATOR_Initialize 87E 0 CODE 0 text9 dist/default/production\LearnToSolder2018.X.production.obj
+_CheckForButtonPushes$440 5F 0 BANK0 1 cstackBANK0 dist/default/production\LearnToSolder2018.X.production.obj
+__pswtext1 A1C 0 CONST 0 swtext1 dist/default/production\LearnToSolder2018.X.production.obj
+__pswtext2 A32 0 CONST 0 swtext2 dist/default/production\LearnToSolder2018.X.production.obj
+__pswtext3 A5C 0 CONST 0 swtext3 dist/default/production\LearnToSolder2018.X.production.obj
+_OSCILLATOR_Initialize A6E 0 CODE 0 text9 dist/default/production\LearnToSolder2018.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -992,11 +1149,13 @@ _OSCILLATOR_Initialize 87E 0 CODE 0 text9 dist/default/production\LearnToSolder2
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text23 0 40B 816 7B 2
-cstackCOMMON 1 70 70 A 1
-intentry 0 4 8 3E7 2
+text9 0 537 A6E 55 2
+text24 0 524 A48 A 2
+cstackCOMMON 1 70 70 B 1
+intentry 0 4 8 50A 2
 reset_vec 0 0 0 1 2
-bssBANK0 1 20 20 4C 1
-swtext1 0 3EB 7D6 B 2
-swtext2 0 400 800 B 2
+bssBANK0 1 20 20 50 1
+swtext1 0 50E A1C 16 2
+swtext3 0 52E A5C 9 2
+dataBANK1 1 A0 A0 A 1
 config 0 8007 1000E 2 2

@@ -19,7 +19,7 @@
  * 4/15/18 0.3 Added real Charliplexing code, arbitrary LEDs can now be on
  *             Added effect state machines so a button press will restart effect
  *               Both effects are now asynchronous
- * 
+ * 5/22/18 1.0 Finished major features (see below) except for menu.
  * 
  * Ideas:
  *   - Add wake timer : force sleep if system has been awake for too long, even
@@ -38,7 +38,7 @@
  *       tapped quickly 4 times, switch to secondary display. For secondary
  *       display, light up more and more LEDs from right to left as the right
  *       button is tapped faster and faster. If all LEDs get lit up, signal a
- *       'win' by blinking all LEDs 10 times rapidly.
+ *       'win' by blinking all LEDs 5 times rapidly. (done)
  *   - Menu : If left button is quickly tapped 4 times while right button 
  *       pressed, go to 'menu' mode. This is where just one LED is lit at a time
  *       starting at the right. Each press of the left button moves the lit
@@ -50,13 +50,21 @@
 
 #include "mcc_generated_files/mcc.h"
 
-#define SLOW_DELAY 250
+// Starting time, in ms, between switching which LED is currently on in main pattern
+#define SLOW_DELAY          250
 
-#define NUMBER_OF_PATTERNS  8
+// Maximum number of patterns allowed in the battery array
+#define NUMBER_OF_PATTERNS    8
 
-#define BUTTON_DEBOUNCE_MS  50
+// Button debounce time in milliseconds
+#define BUTTON_DEBOUNCE_MS   20
 
-#define SHUTDOWN_DELAY_MS 100
+// Number of milliseconds to stay awake for before sleeping just to see if another
+// button will be pressed
+#define SHUTDOWN_DELAY_MS   100
+
+// Time between two button presses below which is considered 'short'
+#define QUICK_PRESS_MS      250
 
 /* Switch inputs :  (pressed = low)
  *   Left = S2 = GP2
@@ -124,6 +132,7 @@
 // Index for each pattern into the patterns arrays
 #define PATTERN_RIGHT_FLASH   0
 #define PATTERN_LEFT_FLASH    1
+#define PATTERN_RIGHT_GAME    2
 
 // Maximum number of milliseconds to allow system to run
 #define MAX_AWAKE_TIME_MS     (5UL * 60UL * 1000UL)
@@ -185,6 +194,10 @@ volatile static uint8_t RightDebounceTimer = 0;
 // Keep track of the state of each button during debounce
 volatile static ButtonState_t LeftButtonState = BUTTON_STATE_IDLE;
 volatile static ButtonState_t RightButtonState = BUTTON_STATE_IDLE;
+
+// Record the last value of WakeTimer when the button was pushed
+volatile static uint32_t LastRightButtonPressTime = 0;
+volatile static uint32_t LastLeftButtonPressTime = 0;
 
 void SetLEDOn(uint8_t LED)
 {
@@ -379,34 +392,55 @@ void RunRightFlash(void)
     // Move to the next state
     if (PatternState[PATTERN_RIGHT_FLASH] != 0)
     {
-      if ((PatternState[PATTERN_RIGHT_FLASH] == 7) && RightButtonPressed())
+      // When we get to state 7, there is a decision to make
+      if (PatternState[PATTERN_RIGHT_FLASH] == 7)
       {
-        if (right_delay > 3)
+        // If the right button is still held down
+        if (RightButtonPressed())
         {
-          right_delay = ((right_delay * 80)/100);
-          PatternState[PATTERN_RIGHT_FLASH] = 2;
+          // Then keep going with the pattern
+          if (right_delay > 3)
+          {
+            // If we're not yet going super fast, decrease our delay and
+            // start over at state 2
+            right_delay = ((right_delay * 80)/100);
+            PatternState[PATTERN_RIGHT_FLASH] = 2;
+          }
+          else
+          {
+            // If we're already going super fast, then jump to state 8
+            // and slow things down
+            PatternState[PATTERN_RIGHT_FLASH] = 8;
+            right_delay = SLOW_DELAY;
+          }
         }
         else
         {
-          PatternState[PATTERN_RIGHT_FLASH] = 8;
-          right_delay = SLOW_DELAY;
+          // Button not pressed, so stop the pattern by shutting off all the LEDs
+          PatternState[PATTERN_RIGHT_FLASH] = 10;
         }
       }
+      // Now, if we get to state 9 and the button is still pressed
       else if ((PatternState[PATTERN_RIGHT_FLASH] == 9) && RightButtonPressed())
       {
+        // Then see if we're not yet going super fast
         if (right_delay > 10)
         {
+          // And go a bit faster, jumping back to state 8
           right_delay = ((right_delay * 95)/100);
           PatternState[PATTERN_RIGHT_FLASH] = 8;
         }
         else
         {
+          // We're already going super fast, so jump back to state 1 to restart
+          // the whole pattern over, nice and slow.
           PatternState[PATTERN_RIGHT_FLASH] = 1;
           right_delay = SLOW_DELAY;
         }
       }
       else
       {
+        // If none of the above applies, then just march on to the next state
         PatternState[PATTERN_RIGHT_FLASH]++;
       }
       PatternDelay[PATTERN_RIGHT_FLASH] = right_delay;
@@ -506,17 +540,24 @@ void RunLeftFlash(void)
     // Move to the next state
     if (PatternState[PATTERN_LEFT_FLASH] != 0)
     {
-      if ((PatternState[PATTERN_LEFT_FLASH] == 7) && LeftButtonPressed())
+      if (PatternState[PATTERN_LEFT_FLASH] == 7)
       {
-        if (left_delay > 3)
+        if (LeftButtonPressed())
         {
-          left_delay = ((left_delay * 80)/100);
-          PatternState[PATTERN_LEFT_FLASH] = 2;
+          if (left_delay > 3)
+          {
+            left_delay = ((left_delay * 80)/100);
+            PatternState[PATTERN_LEFT_FLASH] = 2;
+          }
+          else
+          {
+            PatternState[PATTERN_LEFT_FLASH] = 8;
+            left_delay = SLOW_DELAY;
+          }
         }
         else
         {
-          PatternState[PATTERN_LEFT_FLASH] = 8;
-          left_delay = SLOW_DELAY;
+          PatternState[PATTERN_LEFT_FLASH] = 10;
         }
       }
       else if ((PatternState[PATTERN_LEFT_FLASH] == 9) && LeftButtonPressed())
@@ -541,12 +582,170 @@ void RunLeftFlash(void)
   }
 }
 
+void RunGame(void)
+{
+  static uint8_t num_leds_lit = 1;
+  static uint32_t last_button_press_time = 0;
+  static uint32_t next_decrement_time = 0;
+  
+  if (PatternDelay[PATTERN_RIGHT_GAME] == 0)
+  {
+    if (PatternState[PATTERN_RIGHT_GAME])
+    {
+      switch(num_leds_lit)
+      {
+        case 0:
+          // Do nothing, this pattern inactive
+          break;
+
+        case 1:
+          SetLEDOn(LED_R_RED);
+          SetLEDOff(LED_R_GREEN);
+          SetLEDOff(LED_R_BLUE);
+          SetLEDOff(LED_R_YELLOW);
+          SetLEDOff(LED_L_YELLOW);
+          SetLEDOff(LED_L_BLUE);
+          SetLEDOff(LED_L_GREEN);
+          SetLEDOff(LED_L_RED);
+          break;
+
+        case 2:
+          SetLEDOn(LED_R_RED);
+          SetLEDOn(LED_R_GREEN);
+          SetLEDOff(LED_R_BLUE);
+          SetLEDOff(LED_R_YELLOW);
+          SetLEDOff(LED_L_YELLOW);
+          SetLEDOff(LED_L_BLUE);
+          SetLEDOff(LED_L_GREEN);
+          SetLEDOff(LED_L_RED);
+          break;
+
+        case 3:
+          SetLEDOn(LED_R_RED);
+          SetLEDOn(LED_R_GREEN);
+          SetLEDOn(LED_R_BLUE);
+          SetLEDOff(LED_R_YELLOW);
+          SetLEDOff(LED_L_YELLOW);
+          SetLEDOff(LED_L_BLUE);
+          SetLEDOff(LED_L_GREEN);
+          SetLEDOff(LED_L_RED);
+          break;
+
+        case 4:
+          SetLEDOn(LED_R_RED);
+          SetLEDOn(LED_R_GREEN);
+          SetLEDOn(LED_R_BLUE);
+          SetLEDOn(LED_R_YELLOW);
+          SetLEDOff(LED_L_YELLOW);
+          SetLEDOff(LED_L_BLUE);
+          SetLEDOff(LED_L_GREEN);
+          SetLEDOff(LED_L_RED);
+          break;
+
+        case 5:
+          SetLEDOn(LED_R_RED);
+          SetLEDOn(LED_R_GREEN);
+          SetLEDOn(LED_R_BLUE);
+          SetLEDOn(LED_R_YELLOW);
+          SetLEDOn(LED_L_YELLOW);
+          SetLEDOff(LED_L_BLUE);
+          SetLEDOff(LED_L_GREEN);
+          SetLEDOff(LED_L_RED);
+          break;
+
+        case 6:
+          SetLEDOn(LED_R_RED);
+          SetLEDOn(LED_R_GREEN);
+          SetLEDOn(LED_R_BLUE);
+          SetLEDOn(LED_R_YELLOW);
+          SetLEDOn(LED_L_YELLOW);
+          SetLEDOn(LED_L_BLUE);
+          SetLEDOff(LED_L_GREEN);
+          SetLEDOff(LED_L_RED);
+          break;
+
+        case 7:
+          SetLEDOn(LED_R_RED);
+          SetLEDOn(LED_R_GREEN);
+          SetLEDOn(LED_R_BLUE);
+          SetLEDOn(LED_R_YELLOW);
+          SetLEDOn(LED_L_YELLOW);
+          SetLEDOn(LED_L_BLUE);
+          SetLEDOn(LED_L_GREEN);
+          SetLEDOff(LED_L_RED);
+          break;
+
+        case 8:
+          SetLEDOn(LED_R_RED);
+          SetLEDOn(LED_R_GREEN);
+          SetLEDOn(LED_R_BLUE);
+          SetLEDOn(LED_R_YELLOW);
+          SetLEDOn(LED_L_YELLOW);
+          SetLEDOn(LED_L_BLUE);
+          SetLEDOn(LED_L_GREEN);
+          SetLEDOn(LED_L_RED);
+          break;
+
+        default:
+          break;
+      }
+      
+      // Detect new button presses and increment LED count if seen
+      if (last_button_press_time != LastRightButtonPressTime)
+      {
+        if (LastRightButtonPressTime < (last_button_press_time + 150))
+        {
+          num_leds_lit++;
+          
+          if (num_leds_lit > 8)
+          {
+            num_leds_lit = 0;
+            
+            SetLEDOn(0xFF);
+            __delay_ms(100);
+            SetLEDOff(0xFF);
+            __delay_ms(100);
+            SetLEDOn(0xFF);
+            __delay_ms(100);
+            SetLEDOff(0xFF);
+            __delay_ms(100);
+            SetLEDOn(0xFF);
+            __delay_ms(100);
+            SetLEDOff(0xFF);
+            __delay_ms(100);
+            SetLEDOn(0xFF);
+            __delay_ms(100);
+            SetLEDOff(0xFF);
+            __delay_ms(100);
+            SetLEDOn(0xFF);
+            __delay_ms(100);
+            SetLEDOff(0xFF);
+            __delay_ms(100);
+          }
+        }
+        last_button_press_time = LastRightButtonPressTime;
+      }
+      
+      // Decrement LED count every so many milliseconds
+      if (WakeTimer > next_decrement_time)
+      {
+        next_decrement_time = WakeTimer + 160;
+        if (num_leds_lit)
+        {
+          num_leds_lit--;
+        }
+      }
+    }
+  }    
+}
+
 // Return true if either button is currently down (raw)
 bool CheckForButtonPushes(void)
 {
   static bool LastLeftButtonState = false;
   static bool LastRightButtonState = false;
-
+  static uint8_t LeftButtonQuickPressCount = 0;
+  
   // Debounce left button press
   if (LeftButtonPressedRaw())
   {
@@ -630,6 +829,39 @@ bool CheckForButtonPushes(void)
     if (LastRightButtonState == false)
     {
       PatternState[PATTERN_RIGHT_FLASH] = 1;
+      
+      // Check for entry into game mode
+      if (LeftButtonPressed())
+      {
+        if (WakeTimer < (LastRightButtonPressTime + QUICK_PRESS_MS))
+        {
+          LeftButtonQuickPressCount++;
+
+          if (LeftButtonQuickPressCount == 4)
+          {
+              // Enter into game mode
+              PatternState[PATTERN_RIGHT_FLASH] = 0;
+              PatternState[PATTERN_LEFT_FLASH] = 0;
+              PatternState[PATTERN_RIGHT_GAME] = 1;
+
+//          SetLEDOn(LED_R_RED);
+//          SetLEDOn(LED_R_GREEN);
+//          SetLEDOn(LED_R_BLUE);
+//          SetLEDOn(LED_R_YELLOW);
+//          SetLEDOn(LED_L_YELLOW);
+//          SetLEDOn(LED_L_BLUE);
+//          SetLEDOn(LED_L_GREEN);
+//          SetLEDOn(LED_L_RED);
+
+//          __delay_ms(1000);        
+          }
+        }
+        else
+        {
+            LeftButtonQuickPressCount = 0;
+        }
+      }
+      LastRightButtonPressTime = WakeTimer;
     }
     LastRightButtonState = true;
   }
@@ -673,7 +905,8 @@ void main(void)
   {
     RunRightFlash();
     RunLeftFlash();
-
+    RunGame();
+    
     APatternIsRunning = false;
     for (i=0; i < 8; i++)
     {

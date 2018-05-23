@@ -1,9 +1,9 @@
-[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[p PRO_MODE GLOBOPT AUTOSTATIC PIC14 PIC14E SPACEOPT ]
 [d version 1.1 ]
 [d edition pro ]
 [d chip 12F1572 ]
 [d frameptr 6 ]
-"186 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"195 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [e E3577 . `uc
 BUTTON_STATE_IDLE 0
 BUTTON_STATE_PRESSED_TIMING 1
@@ -11,47 +11,49 @@ BUTTON_STATE_PRESSED 2
 BUTTON_STATE_RELEASED_TIMING 3
 BUTTON_STATE_RELEASED 4
 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
-"86 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftadd.c
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"189 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"202 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _SetLEDOn SetLEDOn `(v  1 e 1 0 ]
-"194
+"207
 [v _SetLEDOff SetLEDOff `(v  1 e 1 0 ]
-"199
+"212
 [v _SetAllLEDsOff SetAllLEDsOff `(v  1 e 1 0 ]
-"208
+"221
 [v _TMR0_Callback TMR0_Callback `(v  1 e 1 0 ]
-"267
+"280
 [v _RightButtonPressedRaw RightButtonPressedRaw `(uc  1 e 1 0 ]
-"273
+"286
 [v _LeftButtonPressedRaw LeftButtonPressedRaw `(uc  1 e 1 0 ]
-"279
+"292
 [v _RightButtonPressed RightButtonPressed `(uc  1 e 1 0 ]
-"285
+"298
 [v _LeftButtonPressed LeftButtonPressed `(uc  1 e 1 0 ]
-"290
+"303
 [v _RunRightFlash RunRightFlash `(v  1 e 1 0 ]
-"417
+"451
 [v _RunLeftFlash RunLeftFlash `(v  1 e 1 0 ]
-"545
+"585
+[v _RunGame RunGame `(v  1 e 1 0 ]
+"743
 [v _CheckForButtonPushes CheckForButtonPushes `(uc  1 e 1 0 ]
-"647
+"879
 [v _main main `(v  1 e 1 0 ]
-"51 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+"51 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"68 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+"68 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "77
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "87
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"55 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "110
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -67,7 +69,7 @@ BUTTON_STATE_RELEASED 4
 [v _IOCAF3_SetInterruptHandler IOCAF3_SetInterruptHandler `(v  1 e 1 0 ]
 "182
 [v _IOCAF3_DefaultInterruptHandler IOCAF3_DefaultInterruptHandler `(v  1 e 1 0 ]
-"65 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"65 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "108
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -84,7 +86,7 @@ BUTTON_STATE_RELEASED 4
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"358 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic12f1572.h
+"372 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic12f1572.h
 [s S154 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -92,25 +94,25 @@ BUTTON_STATE_RELEASED 4
 ]
 [u S159 . 1 `S145 1 . 1 0 `S154 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES159  1 e 1 @11 ]
-"412
+"427
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
-[s S329 . 1 `uc 1 RA0 1 0 :1:0 
+[s S333 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
 `uc 1 RA4 1 0 :1:4 
 `uc 1 RA5 1 0 :1:5 
 ]
-"430
-[s S336 . 1 `uc 1 PORTA 1 0 :6:0 
+"445
+[s S340 . 1 `uc 1 PORTA 1 0 :6:0 
 ]
-[u S338 . 1 `S329 1 . 1 0 `S336 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES338  1 e 1 @12 ]
-"571
+[u S342 . 1 `S333 1 . 1 0 `S340 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES342  1 e 1 @12 ]
+"590
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
-"884
+"912
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
-"1043
+"1075
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
 [s S25 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
@@ -121,7 +123,7 @@ BUTTON_STATE_RELEASED 4
 `uc 1 INTEDG 1 0 :1:6 
 `uc 1 nWPUEN 1 0 :1:7 
 ]
-"1066
+"1098
 [s S34 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
@@ -129,29 +131,29 @@ BUTTON_STATE_RELEASED 4
 ]
 [u S39 . 1 `S25 1 . 1 0 `S34 1 . 1 0 ]
 [v _OPTION_REGbits OPTION_REGbits `VES39  1 e 1 @149 ]
-"1181
+"1215
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
-"1239
+"1274
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
-"1296
+"1332
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
-"1666
+"1710
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-"1864
+"1912
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
-"2076
+"2128
 [v _APFCON APFCON `VEuc  1 e 1 @285 ]
-"2187
+"2240
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
-[s S378 . 1 `uc 1 . 1 0 :1:0 
+[s S382 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 VREGPM 1 0 :1:1 
 ]
-"2406
-[u S381 . 1 `S378 1 . 1 0 ]
-[v _VREGCONbits VREGCONbits `VES381  1 e 1 @407 ]
-"2670
+"2468
+[u S385 . 1 `S382 1 . 1 0 ]
+[v _VREGCONbits VREGCONbits `VES385  1 e 1 @407 ]
+"2741
 [v _WPUA WPUA `VEuc  1 e 1 @524 ]
-"2727
+"2799
 [v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
 [s S103 . 1 `uc 1 IOCAP0 1 0 :1:0 
 `uc 1 IOCAP1 1 0 :1:1 
@@ -160,7 +162,7 @@ BUTTON_STATE_RELEASED 4
 `uc 1 IOCAP4 1 0 :1:4 
 `uc 1 IOCAP5 1 0 :1:5 
 ]
-"2906
+"2981
 [s S110 . 1 `uc 1 IOCAP 1 0 :6:0 
 ]
 [u S112 . 1 `S103 1 . 1 0 `S110 1 . 1 0 ]
@@ -172,7 +174,7 @@ BUTTON_STATE_RELEASED 4
 `uc 1 IOCAN4 1 0 :1:4 
 `uc 1 IOCAN5 1 0 :1:5 
 ]
-"2963
+"3039
 [s S88 . 1 `uc 1 IOCAN 1 0 :6:0 
 ]
 [u S90 . 1 `S81 1 . 1 0 `S88 1 . 1 0 ]
@@ -184,64 +186,68 @@ BUTTON_STATE_RELEASED 4
 `uc 1 IOCAF4 1 0 :1:4 
 `uc 1 IOCAF5 1 0 :1:5 
 ]
-"3020
+"3097
 [s S66 . 1 `uc 1 IOCAF 1 0 :6:0 
 ]
 [u S68 . 1 `S59 1 . 1 0 `S66 1 . 1 0 ]
 [v _IOCAFbits IOCAFbits `VES68  1 e 1 @915 ]
-"140 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"149 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _TRISTable TRISTable `[8]uc  1 s 8 TRISTable ]
-"152
+"161
 [v _PORTTable PORTTable `[8]uc  1 s 8 PORTTable ]
-"165
+"174
 [v _LEDOns LEDOns `VEuc  1 s 1 LEDOns ]
-"167
-[v _LEDState LEDState `uc  1 s 1 LEDState ]
-"170
-[v _PatternDelay PatternDelay `VE[8]ui  1 e 16 0 ]
-"172
-[v _PatternState PatternState `VE[8]uc  1 e 8 0 ]
 "176
-[v _WakeTimer WakeTimer `VEul  1 s 4 WakeTimer ]
+[v _LEDState LEDState `uc  1 s 1 LEDState ]
 "179
+[v _PatternDelay PatternDelay `VE[8]ui  1 e 16 0 ]
+"181
+[v _PatternState PatternState `VE[8]uc  1 e 8 0 ]
+"185
+[v _WakeTimer WakeTimer `VEul  1 s 4 WakeTimer ]
+"188
 [v _ShutdownDelayTimer ShutdownDelayTimer `VEuc  1 s 1 ShutdownDelayTimer ]
-"182
+"191
 [v _LeftDebounceTimer LeftDebounceTimer `VEuc  1 s 1 LeftDebounceTimer ]
-"183
+"192
 [v _RightDebounceTimer RightDebounceTimer `VEuc  1 s 1 RightDebounceTimer ]
-"186
+"195
 [v _LeftButtonState LeftButtonState `VEE3577  1 s 1 LeftButtonState ]
-"187
+"196
 [v _RightButtonState RightButtonState `VEE3577  1 s 1 RightButtonState ]
-"51 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+"199
+[v _LastRightButtonPressTime LastRightButtonPressTime `VEul  1 s 4 LastRightButtonPressTime ]
+"200
+[v _LastLeftButtonPressTime LastLeftButtonPressTime `VEul  1 s 4 LastLeftButtonPressTime ]
+"51 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
 [v _IOCAF2_InterruptHandler IOCAF2_InterruptHandler `*.37(v  1 e 2 0 ]
 "52
 [v _IOCAF3_InterruptHandler IOCAF3_InterruptHandler `*.37(v  1 e 2 0 ]
-"57 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"57 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "58
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"647 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"879 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"669
-[v main@i i `uc  1 a 1 15 ]
-"670
-[v main@APatternIsRunning APatternIsRunning `uc  1 a 1 14 ]
-"711
+"901
+[v main@i i `uc  1 a 1 1 ]
+"902
+[v main@APatternIsRunning APatternIsRunning `uc  1 a 1 0 ]
+"944
 } 0
-"133 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"133 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
 "135
 } 0
-"199 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"212 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _SetAllLEDsOff SetAllLEDsOff `(v  1 e 1 0 ]
 {
-"202
+"215
 } 0
-"68 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+"68 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "75
@@ -251,12 +257,12 @@ BUTTON_STATE_RELEASED 4
 {
 "91
 } 0
-"65 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"65 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "83
 } 0
-"55 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "108
@@ -264,109 +270,122 @@ BUTTON_STATE_RELEASED 4
 "175
 [v _IOCAF3_SetInterruptHandler IOCAF3_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v IOCAF3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
+[v IOCAF3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
 "177
 } 0
 "145
 [v _IOCAF2_SetInterruptHandler IOCAF2_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v IOCAF2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
+[v IOCAF2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
 "147
 } 0
-"77 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
+"77 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "85
 } 0
-"290 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"303 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _RunRightFlash RunRightFlash `(v  1 e 1 0 ]
 {
-"292
+"305
 [v RunRightFlash@right_delay right_delay `ui  1 s 2 right_delay ]
-"415
+"449
 } 0
-"417
+"451
 [v _RunLeftFlash RunLeftFlash `(v  1 e 1 0 ]
 {
-"419
+"453
 [v RunLeftFlash@left_delay left_delay `ui  1 s 2 left_delay ]
-"542
+"583
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 4 ]
+[v ___wmul@product product `ui  1 a 2 0 ]
 "15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+[v ___wmul@multiplier multiplier `ui  1 p 2 3 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 5 ]
 "53
 } 0
-"6 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
-[v ___lwdiv@quotient quotient `ui  1 a 2 9 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 7 ]
 "12
-[v ___lwdiv@counter counter `uc  1 a 1 11 ]
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
 "6
-[v ___lwdiv@divisor divisor `ui  1 p 2 4 ]
-[v ___lwdiv@dividend dividend `ui  1 p 2 6 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 4 ]
 "31
 } 0
-"189 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"585 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+[v _RunGame RunGame `(v  1 e 1 0 ]
+{
+"587
+[v RunGame@num_leds_lit num_leds_lit `uc  1 s 1 num_leds_lit ]
+"588
+[v RunGame@last_button_press_time last_button_press_time `ul  1 s 4 last_button_press_time ]
+"589
+[v RunGame@next_decrement_time next_decrement_time `ul  1 s 4 next_decrement_time ]
+"740
+} 0
+"202
 [v _SetLEDOn SetLEDOn `(v  1 e 1 0 ]
 {
 [v SetLEDOn@LED LED `uc  1 a 1 wreg ]
 [v SetLEDOn@LED LED `uc  1 a 1 wreg ]
-"191
-[v SetLEDOn@LED LED `uc  1 a 1 5 ]
-"192
+"204
+[v SetLEDOn@LED LED `uc  1 a 1 3 ]
+"205
 } 0
-"194
+"207
 [v _SetLEDOff SetLEDOff `(v  1 e 1 0 ]
 {
 [v SetLEDOff@LED LED `uc  1 a 1 wreg ]
 [v SetLEDOff@LED LED `uc  1 a 1 wreg ]
-"196
-[v SetLEDOff@LED LED `uc  1 a 1 5 ]
-"197
+"209
+[v SetLEDOff@LED LED `uc  1 a 1 3 ]
+"210
 } 0
-"545
+"743
 [v _CheckForButtonPushes CheckForButtonPushes `(uc  1 e 1 0 ]
 {
-"547
+"745
 [v CheckForButtonPushes@LastLeftButtonState LastLeftButtonState `uc  1 s 1 LastLeftButtonState ]
-"548
+"746
 [v CheckForButtonPushes@LastRightButtonState LastRightButtonState `uc  1 s 1 LastRightButtonState ]
-"642
+"747
+[v CheckForButtonPushes@LeftButtonQuickPressCount LeftButtonQuickPressCount `uc  1 s 1 LeftButtonQuickPressCount ]
+"874
 } 0
-"267
+"280
 [v _RightButtonPressedRaw RightButtonPressedRaw `(uc  1 e 1 0 ]
 {
-"270
+"283
 } 0
-"279
+"292
 [v _RightButtonPressed RightButtonPressed `(uc  1 e 1 0 ]
 {
-"282
+"295
 } 0
-"273
+"286
 [v _LeftButtonPressedRaw LeftButtonPressedRaw `(uc  1 e 1 0 ]
 {
-"276
+"289
 } 0
-"285
+"298
 [v _LeftButtonPressed LeftButtonPressed `(uc  1 e 1 0 ]
 {
-"288
+"301
 } 0
-"51 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
+"51 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "66
 } 0
-"108 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
+"108 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
 "121
@@ -376,14 +395,14 @@ BUTTON_STATE_RELEASED 4
 {
 "131
 } 0
-"208 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
+"221 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\main.c
 [v _TMR0_Callback TMR0_Callback `(v  1 e 1 0 ]
 {
-"210
+"223
 [v TMR0_Callback@i i `uc  1 a 1 2 ]
-"264
+"277
 } 0
-"110 C:\Users\bschmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
+"110 C:\Users\Brian Schmalz\Dropbox\Deanna\LearnToSolder2018\src\LearnToSolder2018.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 {
 "125
