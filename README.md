@@ -1,8 +1,6 @@
 # LearnToSolder2018
 
-UNDER CONSTRUCTION - BEING UPDATED
-
-![Learn To Solder 2017 Board, assembled](https://github.com/SchmalzHaus/LearnToSolder2017/raw/master/pics/AssembledBoardFrontsm.png "Learn To Solder 2017 Board, assembled")
+![Learn To Solder 2018 Board, assembled](https://github.com/SchmalzHaus/LearnToSolder2018/raw/master/pics/AssembledBoardFrontsm.png "Learn To Solder 2018 Board, assembled")
 
 ## Introduction
 
@@ -14,15 +12,18 @@ If you want to reach Brian Schmalz (brian@schmalzaus.com) or Deanna (deanna@schm
 
 All text files and designs on this site are Open Source. You are free to use these files and do whatever you wish with them.
 
-![Bare Board, back and front](https://github.com/SchmalzHaus/LearnToSolder2017/raw/master/pics/BoardFrontAdnBacksm.png "Bare Board, back and front")
+## LearnToSolder 2018 Kit Contents
 
-## LearnToSolder 2017 Kit Contents
-
-* Qty 1 Bare Circuit Board (see above image for back and front views of the bare board)
+* Qty 1 Circuit Board - with pre-programmed PIC12F1572 CPU soldered on
 * Qty 2 Switches
-* Qty 2 Blinking LEDs
-* Qty 1 Battery Holder
-* Qty 1 Battery
+* Qty 2 Switch caps (various colors)
+* Qty 2 Red LEDs
+* Qty 2 Green LEDs
+* Qty 2 Yellow LEDs
+* Qty 2 Blue LEDs
+* Qty 1 CR2032 Battery Holder
+* Qty 1 CR2032 Battery
+* Qty 2 random value through hole resistors (for Octopus eyebrows)
 
 ## Tools
 
@@ -64,15 +65,15 @@ https://cdn-learn.adafruit.com/downloads/pdf/adafruit-guide-excellent-soldering.
 
 ### Steps:
 
-1. Insert the two switches into the board. Make sure all parts go into the board from the top side (with the thick white lines) to the back side (with all of the text). The switches snap down into the board - you sometimes have to press them in hard to get them to snap. Solder the four pins of each switch.
+1. Solder the eight LEDs. Follow the color guide on the circuit board. Long lead (wire) goes into square hole. You sometimes have to wiggle the LEDs a bit to get them to press all the way flat down on the top side of the board due to a thick spot on the LED leads. Bend the leads apart on the back side to keep the LEDs in place as you solder the LED wires on the back side of the board. Clip the excess leads on the back of the board once soldered.
 
-2. Insert the two LEDs. Long wires go into square holes. You sometimes have to wiggle the LEDs a bit to get them to press all the way flat down on the top side of the board due to a thick spot on the LED leads. Bend the leads apart on the back side to keep the LEDs in place as you solder the LED wires on the back side of the board.
+2. Insert the two switches into the board. Make sure all parts go into the board from the top side (with the thick white lines) to the back side. The switches snap down into the board - you sometimes have to press them in hard to get them to snap. But be careful - sometimes the pins come somewhat bent and pressing them down hard will bend them further if all four are not in the holes as you press down. Solder the four pins of each switch on the back side of the board. Snap the two switch caps down on the switches.
 
 3. Insert the battery holder to the front of the board, being careful to align the outline of the battery hold to the white outline on the top of the board (there is a square tab on the battery holder than needs to match up to the square tab part of the outline). While holding the battery holder into the board, flip it over and solder both pins.
 
-4. Insert the battery into the holder, flat shiny side up. Press the buttons to see your LEDs light. If you hold down a button, it's LED will begin to cycle through different colors and begin to blink.
+4. Insert the two eyebrow resistors. They are not part of the circut but are just for looks. Bend each lead of the reisstor so that the leads go through the board and the resistor sits flush on the board. Solder the leads on the back side of the board and clip excess lead length.
 
-You can follow the path of the electricity by looking at the thick white line on the top side of the board, or the thinner copper wires on the back side of the board. (They mirror each other.) 
+4. Insert the battery into the holder, flat shiny + side up. Press the buttons to see your LEDs light. If you hold down a button, the octopus will display a pattern.
 
 ## Other Soldering Kits
 
