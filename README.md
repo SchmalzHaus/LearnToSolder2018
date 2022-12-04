@@ -1,6 +1,6 @@
 # LearnToSolder2018
 
-![Learn To Solder 2018 Board, assembled](https://github.com/SchmalzHaus/LearnToSolder2018/raw/master/pics/AssembledBoardFrontsm.png "Learn To Solder 2018 Board, assembled")
+![Learn To Solder 2018 Board, assembled](https://github.com/SchmalzHaus/LearnToSolder2018/raw/master/pics/AssembledBoardFront.png "Learn To Solder 2018 Board, assembled")
 
 ## Introduction
 
